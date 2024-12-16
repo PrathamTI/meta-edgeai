@@ -13,6 +13,8 @@ At a high level, the below is required
 - Spread out the order ID in the NRT for a more streamlined traffic, mark capture, display and scheduler (Main R5F) as RT
 - Spread out the priority, give higher priority to RT and lower to NRT
 
+Upstream-Status: Inappropriate [customization for edgeai]
+
 Signed-off-by: Shyam Jagannathan <shyam.jagannathan@ti.com>
 ---
  arch/arm/mach-k3/include/mach/hardware.h      |   1 +

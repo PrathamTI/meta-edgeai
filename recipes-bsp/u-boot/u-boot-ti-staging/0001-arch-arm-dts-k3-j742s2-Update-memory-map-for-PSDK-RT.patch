@@ -6,6 +6,8 @@ Subject: [PATCH] arch: arm: dts: k3-j742s2-*: Update memory map for PSDK RTOS
 PSDK RTOS uses different memory map to accomodate larger FWs and
 remote core memory needs
 
+Upstream-Status: Inappropriate [customization for edgeai]
+
 Signed-off-by: Rahul T R <r-ravikumar@ti.com>
 ---
  arch/arm/dts/k3-j742s2-rtos-memory-map.dtsi | 312 ++++++++++++++++++++
