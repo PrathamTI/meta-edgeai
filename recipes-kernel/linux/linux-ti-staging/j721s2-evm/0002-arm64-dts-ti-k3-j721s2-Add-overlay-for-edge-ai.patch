@@ -6,6 +6,8 @@ Subject: [PATCH] arm64: dts: ti: k3-j721s2: Add overlay for edge ai
 Add overlay for RTOS memory map for edge ai with
 DSS and other pheriperals enabled
 
+Upstream-Status: Inappropriate [customization for edgeai]
+
 Signed-off-by: Rahul T R <r-ravikumar@ti.com>
 ---
  arch/arm64/boot/dts/ti/Makefile                   |  1 +

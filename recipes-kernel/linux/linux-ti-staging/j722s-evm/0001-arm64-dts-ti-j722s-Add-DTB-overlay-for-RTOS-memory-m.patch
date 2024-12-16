@@ -6,6 +6,8 @@ Subject: [PATCH] arm64: dts: ti: j722s: Add DTB overlay for RTOS memory map
 vision-apps.dtbo also disables capture and display related
 peripherals from Linux so that it can be used by RTOS
 
+Upstream-Status: Inappropriate [customization for edgeai]
+
 Signed-off-by: Rahul T R <r-ravikumar@ti.com>
 Signed-off-by: Shreyash Sinha <s-sinha@ti.com>
 ---

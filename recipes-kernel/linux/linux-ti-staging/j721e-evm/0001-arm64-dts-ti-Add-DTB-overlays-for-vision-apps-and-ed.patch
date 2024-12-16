@@ -13,6 +13,8 @@ related peripherals from Linux so that it can be used by RTOS.
 edgeai-apps.dtbo expects these devices to be owned by linux, so
 it uses the rtos-memory-map customization only.
 
+Upstream-Status: Inappropriate [customization for edgeai]
+
 Signed-off-by: Nikhil Devshatwar <nikhil.nd@ti.com>
 ---
  arch/arm64/boot/dts/ti/Makefile               |   3 +

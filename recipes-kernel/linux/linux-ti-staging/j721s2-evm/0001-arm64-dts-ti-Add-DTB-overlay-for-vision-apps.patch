@@ -13,6 +13,8 @@ Also, Update the linux CMA region to allocate the required size in the
 same region as the tiovx shared memory region. This is required to allow
 the codec to access tiovx buffers through DMABUF IMPORT feature.
 
+Upstream-Status: Inappropriate [customization for edgeai]
+
 Signed-off-by: Aniket Limaye <a-limaye@ti.com>
 Signed-off-by: Rahul T R <r-ravikumar@ti.com>
 ---

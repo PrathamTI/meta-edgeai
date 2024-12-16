@@ -3,6 +3,8 @@ From: Rahul T R <r-ravikumar@ti.com>
 Date: Fri, 6 Sep 2024 03:53:44 +0530
 Subject: [PATCH] arm64: dts: ti: Add DTB overlay for vision apps
 
+Upstream-Status: Inappropriate [customization for edgeai]
+
 Signed-off-by: Rahul T R <r-ravikumar@ti.com>
 ---
  arch/arm64/boot/dts/ti/Makefile               |   1 +
