@@ -12,7 +12,7 @@ S = "${WORKDIR}/git"
 
 DEPENDS = "gpiozero"
 RDEPENDS:${PN} = "python3-gpiod"
-COMPATIBLE_MACHINE = "j721e|j721s2|j784s4|j722s|am62axx|am62pxx"
+COMPATIBLE_MACHINE = "j721e|j721s2|j784s4|j722s|am62axx"
 
 inherit setuptools3
 
