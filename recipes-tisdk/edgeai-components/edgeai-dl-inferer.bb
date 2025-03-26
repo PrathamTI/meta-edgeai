@@ -16,18 +16,14 @@ PLAT_SOC:j721s2 = "j721s2"
 PLAT_SOC:j784s4 = "j784s4"
 PLAT_SOC:j722s = "j722s"
 PLAT_SOC:am62axx = "am62a"
-PLAT_SOC:am62xx = "am62x"
-PLAT_SOC:am62pxx = "am62p"
 
 S = "${WORKDIR}/git"
 
 DEPENDS = "edgeai-apps-utils ti-tidl-osrt yaml-cpp opencv ti-vision-apps"
-DEPENDS:remove:am62xx = "ti-vision-apps"
-DEPENDS:remove:am62pxx = "ti-vision-apps"
 RDEPENDS:${PN} += "ti-tidl-osrt-staticdev"
 RDEPENDS:${PN}-source = "bash python3-core cmake python3-yamlloader python3-numpy opencv opencv-dev"
 
-COMPATIBLE_MACHINE = "j721e|j721s2|j784s4|j722s|am62axx|am62xx|am62pxx"
+COMPATIBLE_MACHINE = "j721e|j721s2|j784s4|j722s|am62axx"
 
 export SOC = "${PLAT_SOC}"
 
