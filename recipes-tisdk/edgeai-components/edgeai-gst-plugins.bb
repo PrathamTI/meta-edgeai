@@ -17,8 +17,6 @@ PLAT_SOC:j784s4 = "j784s4"
 PLAT_SOC:j742s2 = "j742s2"
 PLAT_SOC:j722s = "j722s"
 PLAT_SOC:am62axx = "am62a"
-PLAT_SOC:am62xx = "am62x"
-PLAT_SOC:am62pxx = "am62p"
 
 S = "${WORKDIR}/git"
 
@@ -26,15 +24,7 @@ DEPENDS = "edgeai-tiovx-modules edgeai-apps-utils gstreamer1.0-plugins-base edge
 DEPENDS:remove:adas = " edgeai-dl-inferer ti-tidl-osrt"
 RDEPENDS:${PN}-source = "bash meson ninja"
 
-# Remove edgeai-tiovx-modules dependency for ARM only devices
-DEPENDS:remove:am62xx = "edgeai-tiovx-modules"
-DEPENDS:remove:am62pxx = "edgeai-tiovx-modules"
-RDEPENDS:${PN}:remove:am62xx = "edgeai-tiovx-modules"
-RDEPENDS:${PN}:remove:am62pxx = "edgeai-tiovx-modules"
-RDEPENDS:${PN}-source:remove:am62xx = "edgeai-tiovx-modules-dev"
-RDEPENDS:${PN}-source:remove:am62pxx = "edgeai-tiovx-modules-dev"
-
-COMPATIBLE_MACHINE = "j721e|j721s2|j784s4|j742s2|j722s|am62axx|am62xx|am62pxx"
+COMPATIBLE_MACHINE = "j721e|j721s2|j784s4|j742s2|j722s|am62axx"
 
 export SOC = "${PLAT_SOC}"
 
