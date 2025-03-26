@@ -14,7 +14,7 @@ S = "${WORKDIR}/git"
 
 RDEPENDS:${PN} += "edgeai-gst-apps-source bash python3-core python3-aiofiles python3-websocket-client python3-uvicorn python3-fastapi python3-python-multipart python3-websockets python3-psutil cors express nodejs"
 
-COMPATIBLE_MACHINE = "j721e|j721s2|j784s4|j722s|am62axx|am62xx|am62pxx"
+COMPATIBLE_MACHINE = "j721e|j721s2|j784s4|j722s|am62axx"
 
 FILES:${PN} += "/opt"
 
