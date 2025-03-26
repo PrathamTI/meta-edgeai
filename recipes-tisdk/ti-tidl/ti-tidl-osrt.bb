@@ -32,7 +32,7 @@ addtask cp_downloaded_build_deps after do_unpack before do_patch
 
 DEPENDS += "python3-pip-native"
 
-COMPATIBLE_MACHINE = "j721e|j721s2|j784s4|j722s|j742s2|am62axx|am62xx|am62pxx"
+COMPATIBLE_MACHINE = "j721e|j721s2|j784s4|j722s|j742s2|am62axx"
 
 export TARGET_FS = "${WORKDIR}/recipe-sysroot"
 
