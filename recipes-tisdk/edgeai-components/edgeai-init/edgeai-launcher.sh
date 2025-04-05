@@ -21,9 +21,9 @@ stop_gui() {
     kill -15 $(cat "$PIDFILE") && rm -f "$PIDFILE"
 }
 
-# Use this to wait for weston to be ready & kill it as it comes up
-kill_weston() {
-    systemctl stop weston.service
+# Use this to wait for emptty to be ready & kill it as it comes up
+kill_emptty() {
+    systemctl stop emptty.service
 }
 
 case "$1" in
@@ -57,8 +57,8 @@ case "$1" in
             start_gui
         fi
     ;;
-    kill_weston )
-        kill_weston
+    kill_emptty )
+        kill_emptty
     ;;
     * )
         echo "Usage: $0 {start|stop|restart}"
