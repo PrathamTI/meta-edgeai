@@ -48,11 +48,6 @@ IMAGE_INSTALL:append = " \
     packagegroup-arago-gst-sdk-target \
     packagegroup-edgeai-tisdk-addons \
 "
-# disable matrix gui for PSDKLA
-IMAGE_INSTALL:remove = "\
-    packagegroup-arago-tisdk-matrix \
-    packagegroup-arago-tisdk-matrix-extra \
-"
 
 IMAGE_INSTALL:append = " \
     resize-rootfs \
