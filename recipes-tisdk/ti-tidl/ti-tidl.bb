@@ -15,20 +15,15 @@ SRCREV_arm-tidl="a94cbb940007faa0f7175072454d21cd98fa7243"
 SRCREV_concerto="f5541b85b9973ca47680d1a6d970bf61a126daa8"
 SRCREV_onnxruntime="f145bec7bee26b9dfa43b3e07645ee1a5f8b8140"
 SRCREV_tensorflow="422156a973b23bab6b86176a245a66193dccb995"
+SRCREV_protobuf="f0dc78d7e6e331b8c6bb2d5283e06aa26883ca7c"
 
 SRC_URI = " \
     git://git.ti.com/git/processor-sdk-vision/arm-tidl.git;branch=master;protocol=https;name=arm-tidl;destsuffix=git/arm-tidl \
     git://git.ti.com/git/processor-sdk/concerto.git;branch=main;protocol=https;name=concerto;destsuffix=git/concerto \
     git://github.com/TexasInstruments/onnxruntime;branch=tidl-1.15;protocol=https;name=onnxruntime;destsuffix=git/onnxruntime  \
     git://github.com/TexasInstruments/tensorflow;branch=tidl-j7-2.12;protocol=https;name=tensorflow;destsuffix=git/tensorflow  \
-    https://github.com/protocolbuffers/protobuf/archive/refs/tags/v3.21.12.tar.gz;name=protobuf;subdir=git/protobuf-3.21.12 \
+    git://github.com/protocolbuffers/protobuf;branch=main;protocol=https;name=protobuf;destsuffix=git/protobuf \
 "
-SRC_URI[protobuf.sha256sum] = "930c2c3b5ecc6c9c12615cf5ad93f1cd6e12d0aba862b572e076259970ac3a53"
-
-do_cp_downloaded_build_deps() {
-    mv ${S}/protobuf-3.21.12/*/* ${S}/protobuf-3.21.12
-}
-addtask cp_downloaded_build_deps after do_unpack before do_patch
 
 PLAT_SOC = ""
 PLAT_SOC:j721e = "j721e"
@@ -66,7 +61,7 @@ do_compile() {
     CONCERTO_ROOT=${S}/concerto \
     TF_REPO_PATH=${S}/tensorflow \
     ONNX_REPO_PATH=${S}/onnxruntime \
-    TIDL_PROTOBUF_PATH=${S}/protobuf-3.21.12 \
+    TIDL_PROTOBUF_PATH=${S}/protobuf \
     GCC_LINUX_ARM_ROOT= \
     TARGET_SOC=${PLAT_SOC} \
     CROSS_COMPILE_LINARO=aarch64-oe-linux- \
@@ -105,4 +100,4 @@ do_install() {
 
 }
 
-INSANE_SKIP:${PN} += "ldflags"
+INSANE_SKIP:${PN} += "ldflags buildpaths"
