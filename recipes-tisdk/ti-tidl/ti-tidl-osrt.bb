@@ -34,37 +34,34 @@ DEPENDS += "python3-pip-native"
 
 COMPATIBLE_MACHINE = "j721e|j721s2|j784s4|j722s|j742s2|am62axx"
 
-export TARGET_FS = "${WORKDIR}/recipe-sysroot"
-
-PY_DST_DIR="${D}${libdir}/python3.12/site-packages"
-LIB_DST_DIR="${D}${libdir}"
+inherit python3-dir
 
 FILES:${PN}-staticdev += "${libdir}/tflite_2.12/"
 FILES:${PN} += "${libdir}/*.so*"
-FILES:${PN} += "${libdir}/python3.12/*"
+FILES:${PN} += "${PYTHON_SITEPACKAGES_DIR}/*"
 FILES:${PN} += "${includedir}"
 FILES:${PN} += "/usr/dlr/"
 
 do_install() {
-    pip3 install  --no-deps --platform linux_aarch64 ${S}/tflite/tflite_runtime-2.12.0-cp312-cp312-linux_aarch64.whl --target ${PY_DST_DIR} --disable-pip-version-check
-    pip3 install  --no-deps --platform linux_aarch64 ${S}/dlr/dlr-1.13.0-py3-none-any.whl  --target ${PY_DST_DIR} --disable-pip-version-check
-    pip3 install  --no-deps --platform linux_aarch64 ${S}/ort/onnxruntime_tidl-1.15.0-cp312-cp312-linux_aarch64.whl  --target ${PY_DST_DIR} --disable-pip-version-check
+    pip3 install  --no-deps --platform linux_aarch64 ${S}/tflite/tflite_runtime-2.12.0-cp312-cp312-linux_aarch64.whl --target ${D}${PYTHON_SITEPACKAGES_DIR} --disable-pip-version-check
+    pip3 install  --no-deps --platform linux_aarch64 ${S}/dlr/dlr-1.13.0-py3-none-any.whl  --target ${D}${PYTHON_SITEPACKAGES_DIR} --disable-pip-version-check
+    pip3 install  --no-deps --platform linux_aarch64 ${S}/ort/onnxruntime_tidl-1.15.0-cp312-cp312-linux_aarch64.whl  --target ${D}${PYTHON_SITEPACKAGES_DIR} --disable-pip-version-check
 
     install -d ${D}${includedir}
-    install -d ${LIB_DST_DIR}
+    install -d ${D}${libdir}
 
     cp -r ${S}/tfl_lib/tensorflow  ${D}${includedir}/
-    cp -r ${S}/tfl_lib/tflite_2.12  ${LIB_DST_DIR}/
-    cp ${S}/tfl_lib/libtensorflow-lite.a ${LIB_DST_DIR}/
+    cp -r ${S}/tfl_lib/tflite_2.12  ${D}${libdir}/
+    cp ${S}/tfl_lib/libtensorflow-lite.a ${D}${libdir}/
 
-    cp   ${S}/ort_lib/libonnxruntime.so.1.15.0  ${LIB_DST_DIR}/
-    ln -s -r ${LIB_DST_DIR}/libonnxruntime.so.1.15.0 ${LIB_DST_DIR}/libonnxruntime.so
+    cp   ${S}/ort_lib/libonnxruntime.so.1.15.0  ${D}${libdir}/
+    ln -s -r ${D}${libdir}/libonnxruntime.so.1.15.0 ${D}${libdir}/libonnxruntime.so
     rm -rf  ${S}/ort_lib/onnxruntime/csharp
     cp -r  ${S}/ort_lib/onnxruntime ${D}${includedir}/
 
     cp -r ${S}/opencv/opencv-4.2.0  ${D}${includedir}/
 
     mkdir -p ${D}/usr/dlr
-    ln -s -r ${libdir}/python3.12/site-packages/dlr/libdlr.so ${LIB_DST_DIR}/libdlr.so
+    ln -s -r ${D}${PYTHON_SITEPACKAGES_DIR}/dlr/libdlr.so ${D}${libdir}/libdlr.so
 }
 
