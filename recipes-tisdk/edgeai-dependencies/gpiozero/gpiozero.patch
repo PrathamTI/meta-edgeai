@@ -1,3 +1,6 @@
+
+Upstream-Status: Pending
+
 diff --git a/gpiozero/devices.py b/gpiozero/devices.py
 index 964e7ae..374d674 100644
 --- a/gpiozero/devices.py
