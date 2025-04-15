@@ -30,7 +30,7 @@ do_cp_downloaded_build_deps() {
 }
 addtask cp_downloaded_build_deps after do_unpack before do_patch
 
-DEPENDS += "python3-pip-native"
+DEPENDS += "unzip-native"
 
 COMPATIBLE_MACHINE = "j721e|j721s2|j784s4|j722s|j742s2|am62axx"
 
@@ -43,9 +43,10 @@ FILES:${PN} += "${includedir}"
 FILES:${PN} += "/usr/dlr/"
 
 do_install() {
-    pip3 install  --no-deps --platform linux_aarch64 ${S}/tflite/tflite_runtime-2.12.0-cp312-cp312-linux_aarch64.whl --target ${D}${PYTHON_SITEPACKAGES_DIR} --disable-pip-version-check
-    pip3 install  --no-deps --platform linux_aarch64 ${S}/dlr/dlr-1.13.0-py3-none-any.whl  --target ${D}${PYTHON_SITEPACKAGES_DIR} --disable-pip-version-check
-    pip3 install  --no-deps --platform linux_aarch64 ${S}/ort/onnxruntime_tidl-1.15.0-cp312-cp312-linux_aarch64.whl  --target ${D}${PYTHON_SITEPACKAGES_DIR} --disable-pip-version-check
+    install -d ${D}${PYTHON_SITEPACKAGES_DIR}
+    unzip -d ${D}${PYTHON_SITEPACKAGES_DIR} ${S}/tflite/tflite_runtime-2.12.0-cp312-cp312-linux_aarch64.whl
+    unzip -d ${D}${PYTHON_SITEPACKAGES_DIR} ${S}/dlr/dlr-1.13.0-py3-none-any.whl
+    unzip -d ${D}${PYTHON_SITEPACKAGES_DIR} ${S}/ort/onnxruntime_tidl-1.15.0-cp312-cp312-linux_aarch64.whl
 
     install -d ${D}${includedir}
     install -d ${D}${libdir}
