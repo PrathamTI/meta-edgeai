@@ -2,8 +2,6 @@ DESCRIPTION = "Task to install all packages needed on target, for the edgeai/ada
 LICENSE = "MIT"
 PR = "r0"
 
-PACKAGE_ARCH = "${MACHINE_ARCH}"
-
 inherit packagegroup
 
 RDEPENDS:${PN} = "\
