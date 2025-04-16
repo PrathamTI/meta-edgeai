@@ -1,7 +1,7 @@
 [Unit]
 Description=EdgeAI OOB demos
-After=weston.service
-Wants=weston.service
+After=emptty.service
+Wants=emptty.service
 
 [Service]
 Type=forking
