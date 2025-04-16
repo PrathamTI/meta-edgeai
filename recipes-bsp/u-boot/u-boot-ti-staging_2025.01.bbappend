@@ -23,7 +23,7 @@ SRC_URI:append:j722s = " \
 
 PACKAGECONFIG[dm-edgeai] = "DM=${STAGING_DIR_HOST}${nonarch_base_libdir}/firmware/vision_apps_eaik/vx_app_rtos_linux_mcu1_0.out,,ti-edgeai-firmware"
 
-PACKAGECONFIG:remove:am62axx:edgeai = " dm"
-PACKAGECONFIG:append:am62axx:edgeai = " dm-edgeai"
+PACKAGECONFIG:remove:am62axx = " dm"
+PACKAGECONFIG:append:am62axx = " dm-edgeai"
 
 PR:append = "_edgeai_5"

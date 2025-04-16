@@ -34,10 +34,10 @@ PV = "1.0.0"
 # Secure Build
 inherit ti-secdev
 
-FW_DIR:edgeai = "${PLAT_SFX}/vision_apps_eaik"
+FW_DIR = "${PLAT_SFX}/vision_apps_eaik"
 FW_DIR:adas = "${PLAT_SFX}/vision_apps_evm"
 
-INSTALL_FW_DIR:edgeai = "${nonarch_base_libdir}/firmware/vision_apps_eaik/"
+INSTALL_FW_DIR = "${nonarch_base_libdir}/firmware/vision_apps_eaik/"
 INSTALL_FW_DIR:adas = "${nonarch_base_libdir}/firmware/vision_apps_evm/"
 
 MCU_1_0_FW = "vx_app_rtos_linux_mcu1_0.out"
