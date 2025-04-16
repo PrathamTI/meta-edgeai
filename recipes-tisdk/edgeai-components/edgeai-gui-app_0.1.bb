@@ -6,8 +6,28 @@ LICENSE = "TI-TSPA"
 
 LIC_FILES_CHKSUM = "file://LICENSE;md5=5c3a7f5f6886ba6f33ec3d214dc7ab4c"
 
-DEPENDS = "qtbase qtquick3d qtmultimedia qtdeclarative-native"
-RDEPENDS:${PN} = "qtbase qtquick3d qtmultimedia"
+DEPENDS = "\
+    qtbase \
+    qtquick3d \
+    qtdeclarative \
+    qtmultimedia \
+    gstreamer1.0 \
+    qtdeclarative-native \
+    qt5compat \
+"
+
+RDEPENDS:${PN} = "\
+    qtbase \
+    cmake \
+    qtquick3d \
+    qtmultimedia \
+    qt5compat \
+    pulseaudio-service \
+    qtdeclarative-qmlplugins \
+    qtdeclarative-tools \
+    gstreamer1.0-plugins-good \
+    gstreamer1.0-plugins-good-qml6 \
+"
 
 BRANCH = "master"
 SRCREV = "12cf3c4a9ae37313ab9062aefecfb2e72e92a60d"
@@ -17,7 +37,9 @@ SRC_URI = "git://git.ti.com/git/apps/edgeai-gui-app.git;protocol=https;branch=${
 
 S = "${WORKDIR}/git"
 
-inherit qt6-qmake
+inherit cmake pkgconfig
+
+EXTRA_OECMAKE += "-DQT_HOST_PATH=${RECIPE_SYSROOT_NATIVE}${prefix_native}"
 
 do_install:append () {
     install -d ${D}${bindir}
