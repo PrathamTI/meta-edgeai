@@ -21,9 +21,4 @@ SRC_URI:append:j722s = " \
     file://0001-arch-arm-dts-k3-j722s-Update-memory-map-for-PSDK-RTO.patch \
 "
 
-PACKAGECONFIG[dm-edgeai] = "DM=${STAGING_DIR_HOST}${nonarch_base_libdir}/firmware/vision_apps_eaik/vx_app_rtos_linux_mcu1_0.out,,ti-edgeai-firmware"
-
-PACKAGECONFIG:remove:am62axx = " dm"
-PACKAGECONFIG:append:am62axx = " dm-edgeai"
-
 PR:append = "_edgeai_5"

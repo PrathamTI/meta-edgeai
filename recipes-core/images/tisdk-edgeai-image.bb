@@ -12,7 +12,6 @@ COMPATIBLE_MACHINE = "j721e|j721s2|j784s4|j722s|j742s2|am62axx"
 
 EDGEAI_STACK = " \
         ti-vision-apps-dev \
-        ti-edgeai-firmware \
         ti-tidl-dev \
         edgeai-tiovx-kernels-dev \
         edgeai-tiovx-kernels-source \
@@ -43,6 +42,7 @@ EDGEAI_STACK:append:am62axx = " \
 "
 
 EDGEAI_STACK:append:edgeai = " \
+        ti-edgeai-firmware \
         ti-tidl-osrt-dev \
         ti-tidl-osrt-staticdev \
         edgeai-init \
@@ -62,6 +62,7 @@ EDGEAI_STACK:append:edgeai = " \
 "
 
 EDGEAI_STACK:append:adas = " \
+        ti-edgeai-firmware \
         ti-tidl-osrt-staticdev \
         edgeai-gst-plugins \
 "
