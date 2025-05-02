@@ -31,7 +31,7 @@ do_fetch() {
     export SOC="${SOC}"
     export EDGEAI_DATA_PATH=${WORKDIR}/edgeai-test-data
     export OOB_DEMO_ASSETS_PATH=${WORKDIR}/oob-demo-assets
-    export EDGEAI_SDK_VERSION=10_01_00
+    export EDGEAI_SDK_VERSION=11_00_00
 
     ./download_test_data.sh
 
