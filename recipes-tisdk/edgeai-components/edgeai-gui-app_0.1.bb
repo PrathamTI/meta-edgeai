@@ -30,7 +30,7 @@ RDEPENDS:${PN} = "\
 "
 
 BRANCH = "master"
-SRCREV = "a957c1abb02996efd75ad2d1d7466a05b567b78c"
+SRCREV = "d76e1f6aeb2e0523176c2534595728224c578149"
 
 PV = "1.0.0"
 SRC_URI = "git://git.ti.com/git/apps/edgeai-gui-app.git;protocol=https;branch=${BRANCH}"

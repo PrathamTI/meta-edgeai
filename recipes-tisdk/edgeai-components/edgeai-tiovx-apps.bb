@@ -8,7 +8,7 @@ LIC_FILES_CHKSUM = "file://${WORKDIR}/git/LICENSE;md5=dc68ab0305d85e56491b9a9aed
 PV = "1.0.0"
 BRANCH = "main"
 SRC_URI = "git://github.com/TexasInstruments/edgeai-tiovx-apps.git;branch=${BRANCH};protocol=https"
-SRCREV = "a1d7060fe9f913506b62481c2ee3e390d5b4f207"
+SRCREV = "3bd431226876a24891a4838487f711736fca449b"
 
 PLAT_SOC = ""
 PLAT_SOC:j721e = "j721e"
