@@ -55,9 +55,9 @@ C7X_3_FW   = "vx_app_rtos_linux_c7x_3.out"
 C7X_4_FW   = "vx_app_rtos_linux_c7x_4.out"
 
 FW_LIST = ""
-FW_LIST:j721e =     "              ${MCU_1_1_FW} ${MCU_2_0_FW} ${MCU_2_1_FW} ${MCU_3_0_FW} ${MCU_3_1_FW}                             ${C66_1_FW} ${C66_2_FW} ${C7X_1_FW}"
-FW_LIST:j721s2 =    "              ${MCU_1_1_FW} ${MCU_2_0_FW} ${MCU_2_1_FW} ${MCU_3_0_FW} ${MCU_3_1_FW}                                                     ${C7X_1_FW} ${C7X_2_FW}"
-FW_LIST:j784s4 =    "              ${MCU_1_1_FW} ${MCU_2_0_FW} ${MCU_2_1_FW} ${MCU_3_0_FW} ${MCU_3_1_FW} ${MCU_4_0_FW} ${MCU_4_1_FW}                         ${C7X_1_FW} ${C7X_2_FW} ${C7X_3_FW} ${C7X_4_FW}"
+FW_LIST:j721e =     "              ${MCU_2_0_FW} ${MCU_2_1_FW} ${C66_1_FW} ${C66_2_FW} ${C7X_1_FW}"
+FW_LIST:j721s2 =    "              ${MCU_2_0_FW} ${MCU_2_1_FW} ${C7X_1_FW} ${C7X_2_FW}"
+FW_LIST:j784s4 =    "              ${MCU_2_0_FW} ${MCU_2_1_FW} ${MCU_3_0_FW} ${MCU_3_1_FW} ${MCU_4_0_FW} ${MCU_4_1_FW}                         ${C7X_1_FW} ${C7X_2_FW} ${C7X_3_FW} ${C7X_4_FW}"
 FW_LIST:j742s2 =    "                            ${MCU_2_0_FW} ${MCU_2_1_FW} ${MCU_3_0_FW} ${MCU_3_1_FW} ${MCU_4_0_FW} ${MCU_4_1_FW}                         ${C7X_1_FW} ${C7X_2_FW} ${C7X_3_FW}"
 FW_LIST:j722s =     "                            ${MCU_2_0_FW}                                                                                               ${C7X_1_FW} ${C7X_2_FW}"
 
@@ -82,41 +82,30 @@ do_deploy() {
 
 # Set up names for the firmwares
 ALTERNATIVE:${PN}:j721e = "\
-                    j7-mcu-r5f0_1-fw \
                     j7-main-r5f0_0-fw \
                     j7-main-r5f0_1-fw \
-                    j7-main-r5f1_0-fw \
-                    j7-main-r5f1_1-fw \
                     j7-c66_0-fw \
                     j7-c66_1-fw \
                     j7-c71_0-fw\
                     j7-main-r5f0_0-fw-sec \
                     j7-main-r5f0_1-fw-sec \
-                    j7-main-r5f1_0-fw-sec \
-                    j7-main-r5f1_1-fw-sec \
                     j7-c66_0-fw-sec \
                     j7-c66_1-fw-sec \
                     j7-c71_0-fw-sec \
                     "
 
 ALTERNATIVE:${PN}:j721s2 = "\
-                    j721s2-mcu-r5f0_1-fw \
                     j721s2-main-r5f0_0-fw \
                     j721s2-main-r5f0_1-fw \
-                    j721s2-main-r5f1_0-fw \
-                    j721s2-main-r5f1_1-fw \
                     j721s2-c71_0-fw \
                     j721s2-c71_1-fw \
                     j721s2-main-r5f0_0-fw-sec \
                     j721s2-main-r5f0_1-fw-sec \
-                    j721s2-main-r5f1_0-fw-sec \
-                    j721s2-main-r5f1_1-fw-sec \
                     j721s2-c71_0-fw-sec \
                     j721s2-c71_1-fw-sec \
                     "
 
 ALTERNATIVE:${PN}:j784s4 = "\
-                    j784s4-mcu-r5f0_1-fw \
                     j784s4-main-r5f0_0-fw \
                     j784s4-main-r5f0_1-fw \
                     j784s4-main-r5f1_0-fw \
