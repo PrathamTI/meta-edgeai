@@ -25,7 +25,6 @@ RDEPENDS:${PN} = "\
     qtdeclarative-tools \
     gstreamer1.0-plugins-good \
     gstreamer1.0-plugins-good-qml6 \
-    edgeai-gst-apps \
     edgeai-gst-plugins \
 "
 
