@@ -160,39 +160,28 @@ ALTERNATIVE:${PN}:j722s = "\
 
 # Set up link names for the firmwares
 
-ALTERNATIVE_LINK_NAME[j7-mcu-r5f0_1-fw] = "${nonarch_base_libdir}/firmware/j7-mcu-r5f0_1-fw"
 ALTERNATIVE_LINK_NAME[j7-main-r5f0_0-fw] = "${nonarch_base_libdir}/firmware/j7-main-r5f0_0-fw"
 ALTERNATIVE_LINK_NAME[j7-main-r5f0_1-fw] = "${nonarch_base_libdir}/firmware/j7-main-r5f0_1-fw"
-ALTERNATIVE_LINK_NAME[j7-main-r5f1_0-fw] = "${nonarch_base_libdir}/firmware/j7-main-r5f1_0-fw"
-ALTERNATIVE_LINK_NAME[j7-main-r5f1_1-fw] = "${nonarch_base_libdir}/firmware/j7-main-r5f1_1-fw"
 ALTERNATIVE_LINK_NAME[j7-c66_0-fw] = "${nonarch_base_libdir}/firmware/j7-c66_0-fw"
 ALTERNATIVE_LINK_NAME[j7-c66_1-fw] = "${nonarch_base_libdir}/firmware/j7-c66_1-fw"
 ALTERNATIVE_LINK_NAME[j7-c71_0-fw] = "${nonarch_base_libdir}/firmware/j7-c71_0-fw"
 
 ALTERNATIVE_LINK_NAME[j7-main-r5f0_0-fw-sec] = "${nonarch_base_libdir}/firmware/j7-main-r5f0_0-fw-sec"
 ALTERNATIVE_LINK_NAME[j7-main-r5f0_1-fw-sec] = "${nonarch_base_libdir}/firmware/j7-main-r5f0_1-fw-sec"
-ALTERNATIVE_LINK_NAME[j7-main-r5f1_0-fw-sec] = "${nonarch_base_libdir}/firmware/j7-main-r5f1_0-fw-sec"
-ALTERNATIVE_LINK_NAME[j7-main-r5f1_1-fw-sec] = "${nonarch_base_libdir}/firmware/j7-main-r5f1_1-fw-sec"
 ALTERNATIVE_LINK_NAME[j7-c66_0-fw-sec] = "${nonarch_base_libdir}/firmware/j7-c66_0-fw-sec"
 ALTERNATIVE_LINK_NAME[j7-c66_1-fw-sec] = "${nonarch_base_libdir}/firmware/j7-c66_1-fw-sec"
 ALTERNATIVE_LINK_NAME[j7-c71_0-fw-sec] = "${nonarch_base_libdir}/firmware/j7-c71_0-fw-sec"
 
-ALTERNATIVE_LINK_NAME[j721s2-mcu-r5f0_1-fw] = "${nonarch_base_libdir}/firmware/j721s2-mcu-r5f0_1-fw"
 ALTERNATIVE_LINK_NAME[j721s2-main-r5f0_0-fw] = "${nonarch_base_libdir}/firmware/j721s2-main-r5f0_0-fw"
 ALTERNATIVE_LINK_NAME[j721s2-main-r5f0_1-fw] = "${nonarch_base_libdir}/firmware/j721s2-main-r5f0_1-fw"
-ALTERNATIVE_LINK_NAME[j721s2-main-r5f1_0-fw] = "${nonarch_base_libdir}/firmware/j721s2-main-r5f1_0-fw"
-ALTERNATIVE_LINK_NAME[j721s2-main-r5f1_1-fw] = "${nonarch_base_libdir}/firmware/j721s2-main-r5f1_1-fw"
 ALTERNATIVE_LINK_NAME[j721s2-c71_0-fw] = "${nonarch_base_libdir}/firmware/j721s2-c71_0-fw"
 ALTERNATIVE_LINK_NAME[j721s2-c71_1-fw] = "${nonarch_base_libdir}/firmware/j721s2-c71_1-fw"
 
 ALTERNATIVE_LINK_NAME[j721s2-main-r5f0_0-fw-sec] = "${nonarch_base_libdir}/firmware/j721s2-main-r5f0_0-fw-sec"
 ALTERNATIVE_LINK_NAME[j721s2-main-r5f0_1-fw-sec] = "${nonarch_base_libdir}/firmware/j721s2-main-r5f0_1-fw-sec"
-ALTERNATIVE_LINK_NAME[j721s2-main-r5f1_0-fw-sec] = "${nonarch_base_libdir}/firmware/j721s2-main-r5f1_0-fw-sec"
-ALTERNATIVE_LINK_NAME[j721s2-main-r5f1_1-fw-sec] = "${nonarch_base_libdir}/firmware/j721s2-main-r5f1_1-fw-sec"
 ALTERNATIVE_LINK_NAME[j721s2-c71_0-fw-sec] = "${nonarch_base_libdir}/firmware/j721s2-c71_0-fw-sec"
 ALTERNATIVE_LINK_NAME[j721s2-c71_1-fw-sec] = "${nonarch_base_libdir}/firmware/j721s2-c71_1-fw-sec"
 
-ALTERNATIVE_LINK_NAME[j784s4-mcu-r5f0_1-fw] = "${nonarch_base_libdir}/firmware/j784s4-mcu-r5f0_1-fw"
 ALTERNATIVE_LINK_NAME[j784s4-main-r5f0_0-fw] = "${nonarch_base_libdir}/firmware/j784s4-main-r5f0_0-fw"
 ALTERNATIVE_LINK_NAME[j784s4-main-r5f0_1-fw] = "${nonarch_base_libdir}/firmware/j784s4-main-r5f0_1-fw"
 ALTERNATIVE_LINK_NAME[j784s4-main-r5f1_0-fw] = "${nonarch_base_libdir}/firmware/j784s4-main-r5f1_0-fw"
@@ -245,39 +234,28 @@ ALTERNATIVE_LINK_NAME[j722s-c71_1-fw-sec] = "${nonarch_base_libdir}/firmware/j72
 
 # Create the firmware alternatives
 
-ALTERNATIVE_TARGET[j7-mcu-r5f0_1-fw] = "${INSTALL_FW_DIR}/${MCU_1_1_FW}"
 ALTERNATIVE_TARGET[j7-main-r5f0_0-fw] = "${INSTALL_FW_DIR}/${MCU_2_0_FW}"
 ALTERNATIVE_TARGET[j7-main-r5f0_1-fw] = "${INSTALL_FW_DIR}/${MCU_2_1_FW}"
-ALTERNATIVE_TARGET[j7-main-r5f1_0-fw] = "${INSTALL_FW_DIR}/${MCU_3_0_FW}"
-ALTERNATIVE_TARGET[j7-main-r5f1_1-fw] = "${INSTALL_FW_DIR}/${MCU_3_1_FW}"
 ALTERNATIVE_TARGET[j7-c66_0-fw] = "${INSTALL_FW_DIR}/${C66_1_FW}"
 ALTERNATIVE_TARGET[j7-c66_1-fw] = "${INSTALL_FW_DIR}/${C66_2_FW}"
 ALTERNATIVE_TARGET[j7-c71_0-fw] = "${INSTALL_FW_DIR}/${C7X_1_FW}"
 
 ALTERNATIVE_TARGET[j7-main-r5f0_0-fw-sec] = "${INSTALL_FW_DIR}/${MCU_2_0_FW}.signed"
 ALTERNATIVE_TARGET[j7-main-r5f0_1-fw-sec] = "${INSTALL_FW_DIR}/${MCU_2_1_FW}.signed"
-ALTERNATIVE_TARGET[j7-main-r5f1_0-fw-sec] = "${INSTALL_FW_DIR}/${MCU_3_0_FW}.signed"
-ALTERNATIVE_TARGET[j7-main-r5f1_1-fw-sec] = "${INSTALL_FW_DIR}/${MCU_3_1_FW}.signed"
 ALTERNATIVE_TARGET[j7-c66_0-fw-sec] = "${INSTALL_FW_DIR}/${C66_1_FW}.signed"
 ALTERNATIVE_TARGET[j7-c66_1-fw-sec] = "${INSTALL_FW_DIR}/${C66_2_FW}.signed"
 ALTERNATIVE_TARGET[j7-c71_0-fw-sec] = "${INSTALL_FW_DIR}/${C7X_1_FW}.signed"
 
-ALTERNATIVE_TARGET[j721s2-mcu-r5f0_1-fw] = "${INSTALL_FW_DIR}/${MCU_1_1_FW}"
 ALTERNATIVE_TARGET[j721s2-main-r5f0_0-fw] = "${INSTALL_FW_DIR}/${MCU_2_0_FW}"
 ALTERNATIVE_TARGET[j721s2-main-r5f0_1-fw] = "${INSTALL_FW_DIR}/${MCU_2_1_FW}"
-ALTERNATIVE_TARGET[j721s2-main-r5f1_0-fw] = "${INSTALL_FW_DIR}/${MCU_3_0_FW}"
-ALTERNATIVE_TARGET[j721s2-main-r5f1_1-fw] = "${INSTALL_FW_DIR}/${MCU_3_1_FW}"
 ALTERNATIVE_TARGET[j721s2-c71_0-fw] = "${INSTALL_FW_DIR}/${C7X_1_FW}"
 ALTERNATIVE_TARGET[j721s2-c71_1-fw] = "${INSTALL_FW_DIR}/${C7X_2_FW}"
 
 ALTERNATIVE_TARGET[j721s2-main-r5f0_0-fw-sec] = "${INSTALL_FW_DIR}/${MCU_2_0_FW}.signed"
 ALTERNATIVE_TARGET[j721s2-main-r5f0_1-fw-sec] = "${INSTALL_FW_DIR}/${MCU_2_1_FW}.signed"
-ALTERNATIVE_TARGET[j721s2-main-r5f1_0-fw-sec] = "${INSTALL_FW_DIR}/${MCU_3_0_FW}.signed"
-ALTERNATIVE_TARGET[j721s2-main-r5f1_1-fw-sec] = "${INSTALL_FW_DIR}/${MCU_3_1_FW}.signed"
 ALTERNATIVE_TARGET[j721s2-c71_0-fw-sec] = "${INSTALL_FW_DIR}/${C7X_1_FW}.signed"
 ALTERNATIVE_TARGET[j721s2-c71_1-fw-sec] = "${INSTALL_FW_DIR}/${C7X_2_FW}.signed"
 
-ALTERNATIVE_TARGET[j784s4-mcu-r5f0_1-fw] = "${INSTALL_FW_DIR}/${MCU_1_1_FW}"
 ALTERNATIVE_TARGET[j784s4-main-r5f0_0-fw] = "${INSTALL_FW_DIR}/${MCU_2_0_FW}"
 ALTERNATIVE_TARGET[j784s4-main-r5f0_1-fw] = "${INSTALL_FW_DIR}/${MCU_2_1_FW}"
 ALTERNATIVE_TARGET[j784s4-main-r5f1_0-fw] = "${INSTALL_FW_DIR}/${MCU_3_0_FW}"
