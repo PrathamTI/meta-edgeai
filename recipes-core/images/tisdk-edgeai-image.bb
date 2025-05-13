@@ -67,26 +67,6 @@ EDGEAI_STACK:append:adas = " \
         edgeai-gst-plugins \
 "
 
-EDGEAI_STACK:remove:j721s2 = " \
-        ti-rtos-echo-test-fw \
-"
-
-EDGEAI_STACK:remove:j721e = " \
-        ti-rtos-echo-test-fw \
-"
-
-EDGEAI_STACK:remove:j784s4 = " \
-        ti-rtos-echo-test-fw \
-"
-
-EDGEAI_STACK:remove:j722s = " \
-        ti-rtos-echo-test-fw \
-"
-
-EDGEAI_STACK:remove:j742s2 = " \
-        ti-rtos-echo-test-fw \
-"
-
 IMAGE_INSTALL:append = " \
     ${EDGEAI_STACK} \
     resize-rootfs \
