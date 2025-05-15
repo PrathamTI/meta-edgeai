@@ -1,5 +1,5 @@
 IPC_FW_LIST:j721e =   "              ${MCU_2_0_FW} ${MCU_2_1_FW} ${C66_1_FW} ${C66_2_FW} ${C7X_1_FW}"
-IPC_FW_LIST:j721s2 =  "              ${MCU_2_0_FW} ${MCU_2_1_FW} ${MCU_3_0_FW} ${C7X_1_FW} ${C7X_2_FW}"
+IPC_FW_LIST:j721s2 =  "              ${MCU_2_0_FW} ${MCU_2_1_FW} ${C7X_1_FW} ${C7X_2_FW}"
 IPC_FW_LIST:j784s4 =  "              ${MCU_2_0_FW} ${MCU_2_1_FW} ${MCU_3_0_FW} ${MCU_3_1_FW} ${MCU_4_0_FW} ${MCU_4_1_FW} ${C7X_1_FW} ${C7X_2_FW} ${C7X_3_FW} ${C7X_4_FW}"
 IPC_FW_LIST:j722s =   "              ${MCU_2_0_FW} ${C7X_1_FW} ${C7X_2_FW}"
 IPC_FW_LIST:j742s2 =  "              ${MCU_2_0_FW} ${MCU_2_1_FW} ${MCU_3_0_FW} ${MCU_3_1_FW} ${MCU_4_0_FW} ${MCU_4_1_FW} ${C7X_1_FW} ${C7X_2_FW} ${C7X_3_FW}"
@@ -190,3 +190,5 @@ ALTERNATIVE_TARGET[j742s2-c71_2-fw]     = "${INSTALL_IPC_FW_DIR}/${C7X_3_FW}"
 ALTERNATIVE_TARGET[j742s2-c71_2-fw-sec] = "${INSTALL_IPC_FW_DIR}/${C7X_3_FW}.signed"
 
 ALTERNATIVE_PRIORITY = "10"
+
+PR:append = "_edgeai_0"
