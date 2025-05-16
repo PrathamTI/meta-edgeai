@@ -16,7 +16,7 @@ ADAS_STACK = " \
         edgeai-tidl-models \
         edgeai-tiovx-apps-dev \
         edgeai-tiovx-apps-source \
-        ti-edgeai-firmware \
+        ti-adas-firmware \
         ti-tidl-osrt-staticdev \
         edgeai-gst-plugins \
 "
