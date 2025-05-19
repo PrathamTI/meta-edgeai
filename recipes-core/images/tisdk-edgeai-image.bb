@@ -1,10 +1,10 @@
+require recipes-core/images/tisdk-default-image.bb
+
 # Produces wic Image for Edge AI demos
 SUMMARY = "Arago based TI SDK full filesystem image intended for EdgeAI"
 
 DESCRIPTION = "Complete Arago TI SDK filesystem image containing entire \
  edgeAI stack intended for TI Analytics processors."
-
-require recipes-core/images/tisdk-default-image.bb
 
 PN:adas = "tisdk-adas-image"
 
