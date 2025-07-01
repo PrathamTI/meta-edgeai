@@ -29,7 +29,7 @@ do_fetch() {
     chmod +x ./download_models.sh
 
     export SOC="${SOC}"
-    export EDGEAI_SDK_VERSION=11_00_00
+    export EDGEAI_SDK_VERSION=11_01_00
     ./download_models.sh --recommended
 }
 
