@@ -35,7 +35,6 @@ FILES:${PN} += "/opt/*"
 # IL/il.h
 # /usr/include/freetype2/ft2build.h
 # ti_rpmsg_char.h
-# dlr.h
 
 DEPENDS = "glm freetype ti-rpmsg-char repo-native virtual/egl libpam"
 
