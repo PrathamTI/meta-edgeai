@@ -46,7 +46,6 @@ IMAGE_INSTALL += " \
     packagegroup-edgeai-tisdk-addons \
 "
 
-WKS_FILE = "tisdk-edgeai-sdimage.wks"
 WIC_CREATE_EXTRA_ARGS += " --no-fstab-update"
 
 export IMAGE_BASENAME = "tisdk-edgeai-image${ARAGO_IMAGE_SUFFIX}"
