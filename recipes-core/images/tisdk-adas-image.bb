@@ -28,8 +28,6 @@ IMAGE_INSTALL += " \
     packagegroup-edgeai-tisdk-addons \
 "
 
-WIC_CREATE_EXTRA_ARGS += " --no-fstab-update"
-
 export IMAGE_BASENAME = "tisdk-adas-image${ARAGO_IMAGE_SUFFIX}"
 
 PR:append = "_edgeai_8"
