@@ -1,4 +1,4 @@
-FILESEXTRAPATHS:prepend := "${THISDIR}/linux-ti-staging/:${THISDIR}/linux-ti-staging/${MACHINE}:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/linux-ti-staging/:"
 
 SRC_URI:append:j721e = " \
     file://0001-arm64-dts-ti-Add-DTB-overlays-for-vision-apps-and-ed.patch \
