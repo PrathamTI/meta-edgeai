@@ -40,8 +40,9 @@ inherit meson pkgconfig
 do_install:append() {
     CP_ARGS="-Prf --preserve=mode,timestamps --no-preserve=ownership"
 
-    mkdir -p ${D}/opt/edgeai-gst-plugins
+    mkdir -p ${D}/opt/edgeai-gst-plugins/build
     cp ${CP_ARGS} ${S}/* ${D}/opt/edgeai-gst-plugins
+    cp ${CP_ARGS} ${B}/tests ${D}/opt/edgeai-gst-plugins/build
 }
 
 INSANE_SKIP:${PN}-source += "dev-deps"
