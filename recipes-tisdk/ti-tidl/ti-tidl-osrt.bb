@@ -13,19 +13,16 @@ SRC_URI = "https://software-dl.ti.com/jacinto7/esd/tidl-tools/11_01_02_00/OSRT_T
            https://software-dl.ti.com/jacinto7/esd/tidl-tools/11_01_02_00/OSRT_TOOLS/ARM_LINUX/ARAGO/onnxruntime_tidl-1.15.0-cp312-cp312-linux_aarch64.whl;name=ort;subdir=${S}/ort\
            https://software-dl.ti.com/jacinto7/esd/tidl-tools/11_01_02_00/OSRT_TOOLS/ARM_LINUX/ARAGO/tflite_2.12_aragoj7.tar.gz;name=tfl_lib;subdir=${S}/tfl_lib\
            https://software-dl.ti.com/jacinto7/esd/tidl-tools/11_01_02_00/OSRT_TOOLS/ARM_LINUX/ARAGO/onnx_1.15.0_aragoj7.tar.gz;name=ort_lib;subdir=${S}/ort_lib\
-           https://software-dl.ti.com/jacinto7/esd/tidl-tools/11_01_02_00/OSRT_TOOLS/ARM_LINUX/ARAGO/opencv_4.2.0_aragoj7.tar.gz;name=opencv;subdir=${S}/opencv\
 "
 SRC_URI[dlr.sha256sum] = "93bd3e84ff09aaf61d9d0a4f5cc617c4daeabc48d3cf6b2687ceedbffeb2fe8c"
 SRC_URI[tflite.sha256sum] = "94c5f0ccbd5458cfa1327b378c7d479dc7d23979df8f26f091720f850dc02364"
 SRC_URI[ort.sha256sum] = "7a8011a5ca3f5d0d83cfe2a5ec92a60f97e7e5587a49babcf06e55ef50479b7e"
 SRC_URI[tfl_lib.sha256sum] = "2ff6878f51595395d84830747da6a8ddbb168eab93e84edd9e5f75cfb33b6b55"
 SRC_URI[ort_lib.sha256sum] = "0c4ef38355d1b04030b7370a44837b719a1d052359948803710c4e45a67a8c1b"
-SRC_URI[opencv.sha256sum] = "4122073c37e3dd268fa814b6a53510325a1e6636aa3aea9d02ab79f42b4355bd"
 
 do_cp_downloaded_build_deps() {
     mv ${S}/tfl_lib/*/* ${S}/tfl_lib
     mv ${S}/ort_lib/*/* ${S}/ort_lib
-    mv ${S}/opencv/*/* ${S}/opencv
 }
 addtask cp_downloaded_build_deps after do_unpack before do_patch
 
@@ -58,8 +55,6 @@ do_install() {
     ln -s -r ${D}${libdir}/libonnxruntime.so.1.15.0 ${D}${libdir}/libonnxruntime.so
     rm -rf  ${S}/ort_lib/onnxruntime/csharp
     cp -r  ${S}/ort_lib/onnxruntime ${D}${includedir}/
-
-    cp -r ${S}/opencv/opencv-4.2.0  ${D}${includedir}/
 
     mkdir -p ${D}/usr/dlr
     ln -s -r ${D}${PYTHON_SITEPACKAGES_DIR}/dlr/libdlr.so ${D}${libdir}/libdlr.so
