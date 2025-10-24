@@ -6,7 +6,6 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda
 
 S = "${WORKDIR}/src"
 PR:append = "_edgeai_4"
-LICENSE = "MIT"
 
 SRC_URI = "https://software-dl.ti.com/jacinto7/esd/tidl-tools/11_01_02_00/OSRT_TOOLS/ARM_LINUX/ARAGO/dlr-1.13.0-py3-none-any.whl;name=dlr;subdir=${S}/dlr\
            https://software-dl.ti.com/jacinto7/esd/tidl-tools/11_01_02_00/OSRT_TOOLS/ARM_LINUX/ARAGO/tflite_runtime-2.12.0-cp312-cp312-linux_aarch64.whl;name=tflite;subdir=${S}/tflite\
