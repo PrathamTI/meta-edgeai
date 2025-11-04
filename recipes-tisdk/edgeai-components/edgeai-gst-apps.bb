@@ -8,7 +8,7 @@ LIC_FILES_CHKSUM = "file://${WORKDIR}/git/LICENSE;md5=dc68ab0305d85e56491b9a9aed
 PV = "1.0.0"
 BRANCH = "main"
 SRC_URI = "git://github.com/TexasInstruments/edgeai-gst-apps.git;branch=${BRANCH};protocol=https"
-SRCREV = "799dcbda54f829eb7b234bf93a5669addcc1b919"
+SRCREV = "4bcd4d8280a6abbbf418d0ae9faa18829d41e023"
 
 PLAT_SOC = ""
 PLAT_SOC:j721e = "j721e"
