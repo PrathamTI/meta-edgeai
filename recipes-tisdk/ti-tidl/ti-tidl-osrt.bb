@@ -25,7 +25,7 @@ do_cp_downloaded_build_deps() {
 }
 addtask cp_downloaded_build_deps after do_unpack before do_patch
 
-DEPENDS += "unzip-native"
+DEPENDS += "unzip-native cnpy"
 
 COMPATIBLE_MACHINE = "j721e|j721s2|j784s4|j722s|j742s2|am62axx"
 
