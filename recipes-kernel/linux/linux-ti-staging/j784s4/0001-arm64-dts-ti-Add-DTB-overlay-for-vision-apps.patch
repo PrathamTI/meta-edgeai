@@ -1,4 +1,4 @@
-From b9b783b1960fc1eef41778f49f6b9ac823de9969 Mon Sep 17 00:00:00 2001
+From d9a432b7a2664f5321cc5c02e26f9cf9af85efcb Mon Sep 17 00:00:00 2001
 From: Lucas Weaver <l-weaver@ti.com>
 Date: Tue, 18 Oct 2022 09:23:02 -0500
 Subject: [PATCH] arm64: dts: ti: Add DTB overlay for vision apps
@@ -17,18 +17,18 @@ Upstream-Status: Inappropriate [customization for edgeai]
 
 Signed-off-by: Aniket Limaye <a-limaye@ti.com>
 ---
- arch/arm64/boot/dts/ti/Makefile               |   2 +
+ arch/arm64/boot/dts/ti/Makefile               |   1 +
  .../dts/ti/k3-j784s4-rtos-memory-map.dtsi     | 335 ++++++++++++++++++
  .../boot/dts/ti/k3-j784s4-vision-apps.dtso    |  57 +++
- 3 files changed, 394 insertions(+)
+ 3 files changed, 393 insertions(+)
  create mode 100644 arch/arm64/boot/dts/ti/k3-j784s4-rtos-memory-map.dtsi
  create mode 100644 arch/arm64/boot/dts/ti/k3-j784s4-vision-apps.dtso
 
 diff --git a/arch/arm64/boot/dts/ti/Makefile b/arch/arm64/boot/dts/ti/Makefile
-index b0997919e366..7b40cfc80636 100644
+index c3dd8d439896..e35ea79f80a6 100644
 --- a/arch/arm64/boot/dts/ti/Makefile
 +++ b/arch/arm64/boot/dts/ti/Makefile
-@@ -219,6 +219,7 @@ dtb-$(CONFIG_ARCH_K3) += k3-j784s4-evm-quad-port-eth-exp1.dtbo
+@@ -223,6 +223,7 @@ dtb-$(CONFIG_ARCH_K3) += k3-j784s4-evm-quad-port-eth-exp1.dtbo
  dtb-$(CONFIG_ARCH_K3) += k3-j784s4-evm-usxgmii-exp1-exp2.dtbo
  dtb-$(CONFIG_ARCH_K3) += k3-j784s4-j742s2-evm-pcie-ntb.dtbo
  dtb-$(CONFIG_ARCH_K3) += k3-j784s4-j742s2-evm-usb0-type-a.dtbo
@@ -36,12 +36,6 @@ index b0997919e366..7b40cfc80636 100644
  
  # Boards with J742S2 SoC
  dtb-$(CONFIG_ARCH_K3) += k3-j742s2-evm.dtb
-@@ -558,4 +559,5 @@ DTC_FLAGS_k3-j722s-evm-fpdlink-fusion += -@
- DTC_FLAGS_k3-j722s-evm-fpdlink-iv-fusion += -@
- DTC_FLAGS_k3-j784s4-evm += -@
- DTC_FLAGS_k3-j784s4-evm-fpdlink-iv-fusion += -@
-+DTC_FLAGS_k3-j784s4-evm-ethfw += -@
- DTC_FLAGS_k3-j742s2-evm += -@
 diff --git a/arch/arm64/boot/dts/ti/k3-j784s4-rtos-memory-map.dtsi b/arch/arm64/boot/dts/ti/k3-j784s4-rtos-memory-map.dtsi
 new file mode 100644
 index 000000000000..85c1cce2e176
