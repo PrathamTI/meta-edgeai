@@ -23,7 +23,7 @@ index 7b40cfc80636..f6a9d1a00196 100644
  dtb-$(CONFIG_ARCH_K3) += k3-j784s4-j742s2-evm-pcie-ntb.dtbo
  dtb-$(CONFIG_ARCH_K3) += k3-j784s4-j742s2-evm-usb0-type-a.dtbo
  dtb-$(CONFIG_ARCH_K3) += k3-j784s4-vision-apps.dtbo
-+dtb-$(CONFIG_ARCH_K4) += k3-j784s4-edgeai-apps.dtbo
++dtb-$(CONFIG_ARCH_K3) += k3-j784s4-edgeai-apps.dtbo
  
  # Boards with J742S2 SoC
  dtb-$(CONFIG_ARCH_K3) += k3-j742s2-evm.dtb
@@ -37,7 +37,7 @@ index 000000000000..eee02b0538b0
 +/*
 + * vision-apps: device-tree overlay
 + *
-+ * Copyright (C) 2019 - 2022 Texas Instruments Incorporated - http://www.ti.com/
++ * Copyright (C) 2019 - 2025 Texas Instruments Incorporated - https://www.ti.com/
 + */
 +
 +/dts-v1/;
