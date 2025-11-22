@@ -10,7 +10,7 @@ LICENSE = "MIT"
 PV="1.0.0"
 
 SRCREV_FORMAT="default"
-SRCREV_arm-tidl="6f8008a8898f9e17a446d497fdd4c9e5a6af5b3f"
+SRCREV_arm-tidl="e66f0cc5754763548acb5be3396ea10658885e67"
 SRCREV_concerto="f5541b85b9973ca47680d1a6d970bf61a126daa8"
 SRCREV_onnxruntime="f145bec7bee26b9dfa43b3e07645ee1a5f8b8140"
 SRCREV_tensorflow="422156a973b23bab6b86176a245a66193dccb995"
@@ -89,9 +89,12 @@ do_install() {
     ln -s -r ${LIB_DST_DIR}/libtidl_tfl_delegate.so.1.0 ${LIB_DST_DIR}/libtidl_tfl_delegate.so
     cp ${S}/arm-tidl/onnxrt_ep/out/${TIDL_SOC_NAME}/${CPU}/LINUX/release/libtidl_onnxrt_EP.so.1.0 ${LIB_DST_DIR}/
     ln -s -r ${LIB_DST_DIR}/libtidl_onnxrt_EP.so.1.0 ${LIB_DST_DIR}/libtidl_onnxrt_EP.so
+    cp ${S}/arm-tidl/tidlrt_ep/out/${TIDL_SOC_NAME}/${CPU}/LINUX/release/libtidlrt_EP.so.1.0 ${LIB_DST_DIR}/
+    ln -s -r ${LIB_DST_DIR}/libtidlrt_EP.so.1.0 ${LIB_DST_DIR}/libtidlrt_EP.so
 
     install -d ${INC_DST_DIR}
     cp ${S}/arm-tidl/rt/inc/itidl_rt.h  ${INC_DST_DIR}/
+    cp ${S}/arm-tidl/rt/inc/itidl_io.h  ${INC_DST_DIR}/
     cp ${S}/arm-tidl/rt/inc/itvm_rt.h ${INC_DST_DIR}/
 
     install -d ${OPT_DST_DIR}/tidl_test

@@ -8,16 +8,16 @@ S = "${WORKDIR}/src"
 PR:append = "_edgeai_4"
 
 SRC_URI = "https://software-dl.ti.com/jacinto7/esd/tidl-tools/11_01_02_00/OSRT_TOOLS/ARM_LINUX/ARAGO/dlr-1.13.0-py3-none-any.whl;name=dlr;subdir=${S}/dlr\
-           https://software-dl.ti.com/jacinto7/esd/tidl-tools/11_01_02_00/OSRT_TOOLS/ARM_LINUX/ARAGO/tflite_runtime-2.12.0-cp312-cp312-linux_aarch64.whl;name=tflite;subdir=${S}/tflite\
-           https://software-dl.ti.com/jacinto7/esd/tidl-tools/11_01_02_00/OSRT_TOOLS/ARM_LINUX/ARAGO/onnxruntime_tidl-1.15.0-cp312-cp312-linux_aarch64.whl;name=ort;subdir=${S}/ort\
-           https://software-dl.ti.com/jacinto7/esd/tidl-tools/11_01_02_00/OSRT_TOOLS/ARM_LINUX/ARAGO/tflite_2.12_aragoj7.tar.gz;name=tfl_lib;subdir=${S}/tfl_lib\
-           https://software-dl.ti.com/jacinto7/esd/tidl-tools/11_01_02_00/OSRT_TOOLS/ARM_LINUX/ARAGO/onnx_1.15.0_aragoj7.tar.gz;name=ort_lib;subdir=${S}/ort_lib\
+           https://software-dl.ti.com/jacinto7/esd/tidl-tools/11_02_00_00/OSRT_TOOLS/ARM_LINUX/ARAGO/tflite_runtime-2.12.0-cp312-cp312-linux_aarch64.whl;name=tflite;subdir=${S}/tflite\
+           https://software-dl.ti.com/jacinto7/esd/tidl-tools/11_02_00_00/OSRT_TOOLS/ARM_LINUX/ARAGO/onnxruntime_tidl-1.15.0-cp312-cp312-linux_aarch64.whl;name=ort;subdir=${S}/ort\
+           https://software-dl.ti.com/jacinto7/esd/tidl-tools/11_02_00_00/OSRT_TOOLS/ARM_LINUX/ARAGO/tflite_2.12_aragoj7.tar.gz;name=tfl_lib;subdir=${S}/tfl_lib\
+           https://software-dl.ti.com/jacinto7/esd/tidl-tools/11_02_00_00/OSRT_TOOLS/ARM_LINUX/ARAGO/onnx_1.15.0_aragoj7.tar.gz;name=ort_lib;subdir=${S}/ort_lib\
 "
 SRC_URI[dlr.sha256sum] = "93bd3e84ff09aaf61d9d0a4f5cc617c4daeabc48d3cf6b2687ceedbffeb2fe8c"
 SRC_URI[tflite.sha256sum] = "94c5f0ccbd5458cfa1327b378c7d479dc7d23979df8f26f091720f850dc02364"
-SRC_URI[ort.sha256sum] = "7a8011a5ca3f5d0d83cfe2a5ec92a60f97e7e5587a49babcf06e55ef50479b7e"
+SRC_URI[ort.sha256sum] = "38c9953b6bef83f6e92012412fe0818dea5741caa790d70c19328bd88fca3056"
 SRC_URI[tfl_lib.sha256sum] = "2ff6878f51595395d84830747da6a8ddbb168eab93e84edd9e5f75cfb33b6b55"
-SRC_URI[ort_lib.sha256sum] = "0c4ef38355d1b04030b7370a44837b719a1d052359948803710c4e45a67a8c1b"
+SRC_URI[ort_lib.sha256sum] = "f47dd643168eb330e6849fa60dffc48c6f43cb3f63cfd9079921684795817e3f"
 
 do_cp_downloaded_build_deps() {
     mv ${S}/tfl_lib/*/* ${S}/tfl_lib
