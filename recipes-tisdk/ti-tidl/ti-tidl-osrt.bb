@@ -12,12 +12,14 @@ SRC_URI = "https://software-dl.ti.com/jacinto7/esd/tidl-tools/11_01_02_00/OSRT_T
            https://software-dl.ti.com/jacinto7/esd/tidl-tools/11_02_00_00/OSRT_TOOLS/ARM_LINUX/ARAGO/onnxruntime_tidl-1.15.0-cp312-cp312-linux_aarch64.whl;name=ort;subdir=${S}/ort\
            https://software-dl.ti.com/jacinto7/esd/tidl-tools/11_02_00_00/OSRT_TOOLS/ARM_LINUX/ARAGO/tflite_2.12_aragoj7.tar.gz;name=tfl_lib;subdir=${S}/tfl_lib\
            https://software-dl.ti.com/jacinto7/esd/tidl-tools/11_02_00_00/OSRT_TOOLS/ARM_LINUX/ARAGO/onnx_1.15.0_aragoj7.tar.gz;name=ort_lib;subdir=${S}/ort_lib\
+           https://software-dl.ti.com/jacinto7/esd/tidl-tools/11_02_00_00/OSRT_TOOLS/ARM_LINUX/ARAGO/tidlruntime-0.1.0-cp312-cp312-linux_aarch64.whl;name=tidlrt;subdir=${S}/tidlrt\
 "
 SRC_URI[dlr.sha256sum] = "93bd3e84ff09aaf61d9d0a4f5cc617c4daeabc48d3cf6b2687ceedbffeb2fe8c"
 SRC_URI[tflite.sha256sum] = "94c5f0ccbd5458cfa1327b378c7d479dc7d23979df8f26f091720f850dc02364"
 SRC_URI[ort.sha256sum] = "38c9953b6bef83f6e92012412fe0818dea5741caa790d70c19328bd88fca3056"
 SRC_URI[tfl_lib.sha256sum] = "2ff6878f51595395d84830747da6a8ddbb168eab93e84edd9e5f75cfb33b6b55"
 SRC_URI[ort_lib.sha256sum] = "f47dd643168eb330e6849fa60dffc48c6f43cb3f63cfd9079921684795817e3f"
+SRC_URI[tidlrt.sha256sum] = "384d825a362db72411c10eccacfbbef5d4b487c159982a17e2788bb724c5a51e"
 
 do_cp_downloaded_build_deps() {
     mv ${S}/tfl_lib/*/* ${S}/tfl_lib
@@ -32,16 +34,21 @@ COMPATIBLE_MACHINE = "j721e|j721s2|j784s4|j722s|j742s2|am62axx"
 inherit python3-dir
 
 FILES:${PN}-staticdev += "${libdir}/tflite_2.12/"
+FILES:${PN}-staticdev += "${libdir}/*.a"
+FILES:${PN}-staticdev += "${PYTHON_SITEPACKAGES_DIR}/tidlruntime/lib/*.a"
 FILES:${PN} += "${libdir}/*.so*"
 FILES:${PN} += "${PYTHON_SITEPACKAGES_DIR}/*"
 FILES:${PN} += "${includedir}"
 FILES:${PN} += "/usr/dlr/"
+
+INSANE_SKIP:${PN} += "already-stripped"
 
 do_install() {
     install -d ${D}${PYTHON_SITEPACKAGES_DIR}
     unzip -d ${D}${PYTHON_SITEPACKAGES_DIR} ${S}/tflite/tflite_runtime-2.12.0-cp312-cp312-linux_aarch64.whl
     unzip -d ${D}${PYTHON_SITEPACKAGES_DIR} ${S}/dlr/dlr-1.13.0-py3-none-any.whl
     unzip -d ${D}${PYTHON_SITEPACKAGES_DIR} ${S}/ort/onnxruntime_tidl-1.15.0-cp312-cp312-linux_aarch64.whl
+    unzip -d ${D}${PYTHON_SITEPACKAGES_DIR} ${S}/tidlrt/tidlruntime-0.1.0-cp312-cp312-linux_aarch64.whl
 
     install -d ${D}${includedir}
     install -d ${D}${libdir}
@@ -57,5 +64,8 @@ do_install() {
 
     mkdir -p ${D}/usr/dlr
     ln -s -r ${D}${PYTHON_SITEPACKAGES_DIR}/dlr/libdlr.so ${D}${libdir}/libdlr.so
+
+    ln -s -r ${D}${PYTHON_SITEPACKAGES_DIR}/tidlruntime/include ${D}${includedir}/tidlruntime
+    ln -s -r ${D}${PYTHON_SITEPACKAGES_DIR}/tidlruntime/lib/libtidlruntime.a ${D}${libdir}/libtidlruntime.a
 }
 
