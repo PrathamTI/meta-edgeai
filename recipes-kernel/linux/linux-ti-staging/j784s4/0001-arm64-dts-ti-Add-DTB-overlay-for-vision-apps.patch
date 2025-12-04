@@ -323,20 +323,20 @@ index 000000000000..cc8970b69f16
 +	};
 +	c7x_ddr_heaps_hi: c7x-ddr-heaps-hi@880000000 {
 +		compatible = "shared-dma-pool";
-+		reg = <0x08 0x80000000 0x01 0x000000000>;
++		reg = <0x08 0x80000000 0x01 0x00000000>;
 +		no-map;
 +	};
 +	vision_apps_shared_region: vision_apps_shared-memories {
 +		compatible = "dma-heap-carveout";
-+		reg = <0x09 0x80000000 0x00 0x3c000000>;
++		reg = <0x0a 0x00000000 0x00 0x3c000000>;
 +	};
 +	linux,cma {
 +		status = "disabled";
 +	};
-+	linux_cma_region: linux-cma-buffers@a00000000 {
++	linux_cma_region: linux-cma-buffers@a80000000 {
 +		compatible = "shared-dma-pool";
 +		reusable;
-+		reg = <0x0a 0x00000000 0x00 0x70000000>;
++		reg = <0x0a 0x80000000 0x00 0x70000000>;
 +		linux,cma-default;
 +	};
 +};
