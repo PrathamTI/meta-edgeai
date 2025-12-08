@@ -6,13 +6,12 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda
 
 S = "${WORKDIR}/git"
 PR:append = "_edgeai_2"
-LICENSE = "MIT"
 PV="1.0.0"
 
 SRCREV_FORMAT="default"
-SRCREV_arm-tidl="e66f0cc5754763548acb5be3396ea10658885e67"
+SRCREV_arm-tidl="67eba49d18b60714a18981813da08e43d98ab741"
 SRCREV_concerto="f5541b85b9973ca47680d1a6d970bf61a126daa8"
-SRCREV_onnxruntime="f145bec7bee26b9dfa43b3e07645ee1a5f8b8140"
+SRCREV_onnxruntime="5816ccce5bb4b9b8ce1869bdda397257a8d2028a"
 SRCREV_tensorflow="422156a973b23bab6b86176a245a66193dccb995"
 SRCREV_protobuf="f0dc78d7e6e331b8c6bb2d5283e06aa26883ca7c"
 
