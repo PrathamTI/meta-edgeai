@@ -36,7 +36,9 @@ FILES:${PN} += "/opt/*"
 # /usr/include/freetype2/ft2build.h
 # ti_rpmsg_char.h
 
-DEPENDS = "glm freetype ti-rpmsg-char repo-native virtual/egl libpam nlohmann-json stb"
+DEPENDS = "glm freetype ti-rpmsg-char repo-native virtual/egl libpam"
+# nlohmann-json & stb is not needed for AM62A as it doesn't supports SRV demo
+DEPENDS:append:adas = " nlohmann-json stb"
 
 COMPATIBLE_MACHINE = "j721e|j721s2|j784s4|j722s|j742s2|am62axx"
 
