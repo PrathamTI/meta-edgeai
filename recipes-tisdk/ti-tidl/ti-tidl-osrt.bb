@@ -30,6 +30,13 @@ addtask cp_downloaded_build_deps after do_unpack before do_patch
 
 DEPENDS += "unzip-native cnpy"
 
+RDEPENDS:${PN} += " \
+     python3-mldtypes \
+     python3-decorator \
+     python3-graphviz \
+     python3-attrs \
+"
+
 COMPATIBLE_MACHINE = "j721e|j721s2|j784s4|j722s|j742s2|am62axx"
 
 inherit python3-dir
