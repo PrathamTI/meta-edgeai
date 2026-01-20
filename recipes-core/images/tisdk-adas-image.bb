@@ -16,7 +16,6 @@ ADAS_STACK = " \
         edgeai-tidl-models \
         ti-adas-firmware \
         ti-tidl-osrt-staticdev \
-        edgeai-gst-plugins \
 "
 
 ADAS_STACK:remove:am62axx = " \
@@ -32,4 +31,4 @@ IMAGE_INSTALL += " \
 
 export IMAGE_BASENAME = "tisdk-adas-image${ARAGO_IMAGE_SUFFIX}"
 
-PR:append = "_edgeai_9"
+PR:append = "_edgeai_10"
