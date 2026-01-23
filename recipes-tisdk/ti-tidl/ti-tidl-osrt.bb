@@ -28,7 +28,7 @@ do_cp_downloaded_build_deps() {
 }
 addtask cp_downloaded_build_deps after do_unpack before do_patch
 
-DEPENDS += "unzip-native cnpy"
+DEPENDS += "unzip-native cnpy yaml-cpp"
 
 RDEPENDS:${PN} += " \
      python3-mldtypes \
