@@ -20,5 +20,6 @@ RDEPENDS:${PN} = "\
     python3-opencv \
     python3-pip \
     python3-pillow \
+	yaml-cpp \
 "
 
