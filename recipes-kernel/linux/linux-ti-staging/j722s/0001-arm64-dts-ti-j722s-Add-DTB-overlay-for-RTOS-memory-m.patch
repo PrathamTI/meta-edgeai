@@ -1,4 +1,4 @@
-From 7554063d6a491dba774e44f43d40841810ccebc3 Mon Sep 17 00:00:00 2001
+From 446d6270f86282ce01beb67ef44e2b49e0450db1 Mon Sep 17 00:00:00 2001
 From: Rahul T R <r-ravikumar@ti.com>
 Date: Tue, 18 Oct 2022 10:40:25 -0500
 Subject: [PATCH] arm64: dts: ti: j722s: Add DTB overlay for RTOS memory map
@@ -21,10 +21,10 @@ Signed-off-by: Shreyash Sinha <s-sinha@ti.com>
  create mode 100644 arch/arm64/boot/dts/ti/k3-j722s-vision-apps.dtso
 
 diff --git a/arch/arm64/boot/dts/ti/Makefile b/arch/arm64/boot/dts/ti/Makefile
-index 229aebba46ca..2b2b90858cbc 100644
+index 22eb9dfb173c..97665e78f19b 100644
 --- a/arch/arm64/boot/dts/ti/Makefile
 +++ b/arch/arm64/boot/dts/ti/Makefile
-@@ -175,6 +175,8 @@ dtb-$(CONFIG_ARCH_K3) += k3-j722s-evm-fpdlink-fusion.dtbo
+@@ -215,6 +215,8 @@ dtb-$(CONFIG_ARCH_K3) += k3-j722s-evm-fpdlink-iv-fusion.dtbo
  dtb-$(CONFIG_ARCH_K3) += k3-j722s-evm-microtips-mf101hie-panel.dtbo
  dtb-$(CONFIG_ARCH_K3) += k3-j722s-evm-pwm.dtbo
  dtb-$(CONFIG_ARCH_K3) += k3-j722s-evm-v3link-fusion.dtbo
@@ -52,7 +52,7 @@ index 000000000000..44e7b6e7d72e
 +#include "k3-j722s-rtos-memory-map.dtsi"
 diff --git a/arch/arm64/boot/dts/ti/k3-j722s-rtos-memory-map.dtsi b/arch/arm64/boot/dts/ti/k3-j722s-rtos-memory-map.dtsi
 new file mode 100644
-index 000000000000..1e79eef6a22c
+index 000000000000..784a8c0f2d9e
 --- /dev/null
 +++ b/arch/arm64/boot/dts/ti/k3-j722s-rtos-memory-map.dtsi
 @@ -0,0 +1,169 @@
@@ -148,12 +148,12 @@ index 000000000000..1e79eef6a22c
 +	};
 +	vision_apps_rtos_ipc_memory_region: vision-apps-rtos-ipc-memory-region@a5000000 {
 +		compatible = "shared-dma-pool";
-+		reg = <0x00 0xa5000000 0x00 0x02000000>;
++		reg = <0x00 0xa5000000 0x00 0x01000000>;
 +		no-map;
 +	};
-+	vision_apps_memory_region: vision-apps-dma-memory@a7000000 {
++	vision_apps_memory_region: vision-apps-dma-memory@a6000000 {
 +		compatible = "shared-dma-pool";
-+		reg = <0x00 0xa7000000 0x00 0x06000000>;
++		reg = <0x00 0xa6000000 0x00 0x01c40000>;
 +		no-map;
 +	};
 +	vision_apps_c71_0_dma_memory_region: vision-apps-c71-dma-memory@ad000000 {
@@ -178,7 +178,7 @@ index 000000000000..1e79eef6a22c
 +	};
 +	vision_apps_core_heaps_lo: vision-apps-core-heap-memory-lo@b5000000 {
 +		compatible = "shared-dma-pool";
-+		reg = <0x00 0xb5000000 0x00 0x02800000>;
++		reg = <0x00 0xb5000000 0x00 0x02c00000>;
 +		no-map;
 +	};
 +	c7x_ddr_heaps_hi: c7x-ddr-heaps-hi@880000000 {
