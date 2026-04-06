@@ -9,7 +9,7 @@ PR:append = "_edgeai_2"
 PV="1.0.0"
 
 SRCREV_FORMAT="default"
-SRCREV_arm-tidl="81fefa6907b933230f7ef62710a5e9440487f628"
+SRCREV_arm-tidl="b53e2b7f0249cea029dc4341034179af1ec0eafb"
 SRCREV_concerto="f5541b85b9973ca47680d1a6d970bf61a126daa8"
 SRCREV_onnxruntime="5816ccce5bb4b9b8ce1869bdda397257a8d2028a"
 SRCREV_tensorflow="422156a973b23bab6b86176a245a66193dccb995"
