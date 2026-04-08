@@ -35,6 +35,8 @@ RDEPENDS:${PN} += " \
      python3-decorator \
      python3-graphviz \
      python3-attrs \
+     python3-psutil \
+     python3-typing-extensions \
 "
 
 COMPATIBLE_MACHINE = "j721e|j721s2|j784s4|j722s|j742s2|am62axx"
