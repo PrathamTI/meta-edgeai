@@ -19,6 +19,7 @@ SRC_URI:append:j742s2 = " \
 
 SRC_URI:append:j722s = " \
     file://0001-arch-arm-dts-k3-j722s-Update-memory-map-for-PSDK-RTO.patch \
+    file://0002-j722s-Change-cpsw3g-power-domain-to-shared.patch \
 "
 
-PR:append = "_edgeai_5"
+PR:append = "_edgeai_6"

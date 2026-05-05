@@ -1,0 +1,35 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Puyush Gupta <p-gupta5@ti.com>
+Date: Sun, 4 May 2026 00:00:00 +0000
+Subject: [PATCH] j722s: Change cpsw3g power-domain to shared
+
+Change the cpsw3g ethernet controller power-domain from
+TI_SCI_PD_EXCLUSIVE to TI_SCI_PD_SHARED to allow both
+U-Boot and RTOS cores to access the ethernet peripheral.
+
+This enables ethernet firmware (ethfw) running on MCU R5F
+to coexist with U-Boot ethernet driver.
+
+Upstream-Status: Inappropriate [customization for edgeai]
+
+Signed-off-by: Puyush Gupta <p-gupta5@ti.com>
+---
+ dts/upstream/src/arm64/ti/k3-am62p-j722s-common-main.dtsi | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/dts/upstream/src/arm64/ti/k3-am62p-j722s-common-main.dtsi b/dts/upstream/src/arm64/ti/k3-am62p-j722s-common-main.dtsi
+index 1111111111..2222222222 100644
+--- a/dts/upstream/src/arm64/ti/k3-am62p-j722s-common-main.dtsi
++++ b/dts/upstream/src/arm64/ti/k3-am62p-j722s-common-main.dtsi
+@@ -711,7 +711,7 @@ cpsw3g: ethernet@8000000 {
+ 		assigned-clocks = <&k3_clks 13 3>;
+ 		assigned-clock-parents = <&k3_clks 13 11>;
+ 		clock-names = "fck";
+-		power-domains = <&k3_pds 13 TI_SCI_PD_EXCLUSIVE>;
++		power-domains = <&k3_pds 13 TI_SCI_PD_SHARED>;
+ 		status = "disabled";
+
+ 		dmas = <&main_pktdma 0xc600 15>,
+--
+2.34.1
+

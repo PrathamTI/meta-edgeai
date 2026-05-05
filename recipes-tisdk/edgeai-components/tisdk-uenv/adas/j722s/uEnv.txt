@@ -14,4 +14,4 @@ uenvcmd=if test "$board_name" = "am67-sk"; then ; setenv args_all $args_all syst
 
 # Setting the right U-Boot environment variables
 dorprocboot=1
-name_overlays=ti/k3-j722s-vision-apps.dtbo
+name_overlays=ti/k3-j722s-evm-ethfw.dtbo ti/k3-j722s-vision-apps.dtbo
