@@ -18,6 +18,8 @@ SRC_URI:append:j742s2 = " \
 
 SRC_URI:append:j722s = " \
     file://0001-arm64-dts-ti-j722s-Add-DTB-overlay-for-RTOS-memory-m.patch \
+    file://0001-kernel-j722s-Revert-arm64-dts-ti-k3-j722s-fix-pinctr.patch \
+    file://0001-kernel-j722s-Revert-pinctrl-configuration-in-FPDLink.patch \
 "
 
 PR:append = "_edgeai_8"
