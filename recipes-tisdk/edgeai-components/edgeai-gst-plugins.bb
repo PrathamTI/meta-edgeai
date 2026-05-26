@@ -18,8 +18,6 @@ PLAT_SOC:j742s2 = "j742s2"
 PLAT_SOC:j722s = "j722s"
 PLAT_SOC:am62axx = "am62a"
 
-S = "${WORKDIR}/git"
-
 DEPENDS = "edgeai-tiovx-modules edgeai-apps-utils gstreamer1.0-plugins-base edgeai-dl-inferer ti-tidl-osrt"
 DEPENDS:remove:adas = " edgeai-dl-inferer ti-tidl-osrt"
 RDEPENDS:${PN}-source = "bash meson ninja"

@@ -12,7 +12,7 @@ inherit pypi setuptools3
 SRCNAME ?= "ml_dtypes"
 PYPI_SRC_URI = "https://files.pythonhosted.org/packages/fa/47/09ca9556bf99cfe7ddf129a3423642bd482a27a717bf115090493fa42429/${SRCNAME}-${PV}.tar.gz"
 
-S = "${WORKDIR}/${SRCNAME}-${PV}"
+S = "${UNPACKDIR}/${SRCNAME}-${PV}"
 
 DEPENDS = " \
     python3-pybind11-native \

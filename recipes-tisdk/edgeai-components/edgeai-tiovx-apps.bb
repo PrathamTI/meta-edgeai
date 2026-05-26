@@ -3,7 +3,7 @@ DESCRIPTION = "EdgeAI TIOVX Apps implements Open VX based simple deep learning d
 HOMEPAGE = "https://github.com/TexasInstruments/edgeai-tiovx-apps"
 
 LICENSE = "TI-TFL"
-LIC_FILES_CHKSUM = "file://${WORKDIR}/git/LICENSE;md5=dc68ab0305d85e56491b9a9aed2309f2"
+LIC_FILES_CHKSUM = "file://${UNPACKDIR}/${BP}/LICENSE;md5=dc68ab0305d85e56491b9a9aed2309f2"
 
 PV = "1.0.0"
 BRANCH = "main"
@@ -18,8 +18,6 @@ PLAT_SOC:j722s = "j722s"
 PLAT_SOC:j742s2 = "j742s2"
 PLAT_SOC:am62axx = "am62a"
 
-S = "${WORKDIR}/git"
-
 DEPENDS = "edgeai-tiovx-kernels yaml-cpp glib-2.0 ffmpeg libdrm"
 RDEPENDS:${PN}-source = "cmake bash python3-core"
 
@@ -27,7 +25,7 @@ COMPATIBLE_MACHINE = "j721e|j721s2|j784s4|j722s|j742s2|am62axx"
 
 export SOC = "${PLAT_SOC}"
 
-EXTRA_OECMAKE = "-DTARGET_FS=${WORKDIR}/recipe-sysroot -DCMAKE_SKIP_RPATH=TRUE -DCMAKE_OUTPUT_DIR=${WORKDIR}/out"
+EXTRA_OECMAKE = "-DTARGET_FS=${WORKDIR}/recipe-sysroot -DCMAKE_SKIP_RPATH=TRUE -DCMAKE_OUTPUT_DIR=${UNPACKDIR}/out"
 
 PACKAGES += "${PN}-source"
 FILES:${PN}-source += "/opt"
@@ -40,8 +38,8 @@ do_install:append() {
     CP_ARGS="-Prf --preserve=mode,timestamps --no-preserve=ownership"
 
     mkdir -p ${D}/opt/edgeai-tiovx-apps
-    cp ${CP_ARGS} ${WORKDIR}/git/* ${D}/opt/edgeai-tiovx-apps
-    cp ${CP_ARGS} ${WORKDIR}/out/bin ${D}/opt/edgeai-tiovx-apps
+    cp ${CP_ARGS} ${S}/* ${D}/opt/edgeai-tiovx-apps
+    cp ${CP_ARGS} ${UNPACKDIR}/out/bin ${D}/opt/edgeai-tiovx-apps
     rm -rf ${D}/usr/cmake
 }
 

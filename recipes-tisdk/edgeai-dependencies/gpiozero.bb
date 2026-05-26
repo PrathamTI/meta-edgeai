@@ -10,8 +10,6 @@ SRC_URI = " \
 "
 SRCREV = "2b6aa5314830fedf3701113b6713161086defa38"
 
-S = "${WORKDIR}/git"
-
 inherit setuptools3
 
 PR:append = "_edgeai_0"

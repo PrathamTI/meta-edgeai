@@ -18,8 +18,6 @@ PLAT_SOC:j722s = "j722s"
 PLAT_SOC:j742s2 = "j742s2"
 PLAT_SOC:am62axx = "am62a"
 
-S = "${WORKDIR}/git"
-
 DEPENDS = "ti-vision-apps edgeai-tiovx-kernels"
 RDEPENDS:${PN}-source = "cmake"
 
@@ -27,7 +25,7 @@ COMPATIBLE_MACHINE = "j721e|j721s2|j784s4|j722s|j742s2|am62axx"
 
 export SOC = "${PLAT_SOC}"
 
-EXTRA_OECMAKE = "-DTARGET_FS=${WORKDIR}/recipe-sysroot -DINSTALL_SRC=on -DCMAKE_SKIP_RPATH=TRUE -DCMAKE_OUTPUT_DIR=${WORKDIR}/out"
+EXTRA_OECMAKE = "-DTARGET_FS=${WORKDIR}/recipe-sysroot -DINSTALL_SRC=on -DCMAKE_SKIP_RPATH=TRUE -DCMAKE_OUTPUT_DIR=${UNPACKDIR}/out"
 
 PACKAGES += "${PN}-source"
 FILES:${PN}-source += "/opt/"

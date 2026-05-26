@@ -34,8 +34,6 @@ SRCREV = "b2220eaa3f335bc77b928a57e2325dd1881c5bc0"
 PV = "1.0.0"
 SRC_URI = "git://git.ti.com/git/apps/edgeai-gui-app.git;protocol=https;branch=${BRANCH}"
 
-S = "${WORKDIR}/git"
-
 inherit cmake pkgconfig
 
 EXTRA_OECMAKE += "-DQT_HOST_PATH=${RECIPE_SYSROOT_NATIVE}${prefix_native}"

@@ -8,8 +8,6 @@ LIC_FILES_CHKSUM = "file://${S}/LICENSE.txt;md5=c514977d484aa7daa306d63effcba9bc
 SRC_URI = "git://github.com/TexasInstruments/ti-gpio-py.git;protocol=https;branch=master"
 SRCREV = "62f12a3710c6056057cf23b8cfc88dd269c6ee78"
 
-S = "${WORKDIR}/git"
-
 DEPENDS = "gpiozero"
 RDEPENDS:${PN} = "python3-gpiod"
 COMPATIBLE_MACHINE = "j721e|j721s2|j784s4|j722s|am62axx"

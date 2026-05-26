@@ -1,7 +1,7 @@
 SUMMARY = "OpenVX Middleware library"
 DESCRIPTION = "Builds tivision_apps user space library"
 
-PR:append = "_edgeai_15"
+PR:append = "_edgeai_16"
 
 PV = "11.02.03"
 
@@ -15,7 +15,7 @@ LIC_FILES_CHKSUM = "file://${COREBASE}/../meta-ti/meta-ti-bsp/licenses/TI-TFL;md
                     file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302 \
                     file://${COMMON_LICENSE_DIR}/Apache-2.0;md5=89aea4e17d99a7cacdbeed46a0096b10 \
                     file://${COMMON_LICENSE_DIR}/Apache-2.0-with-LLVM-exception;md5=0bcd48c3bdfef0c9d9fd17726e4b7dab \
-                    file://${WORKDIR}/repo/tiovx/include/VX/vx.h;beginline=1;endline=15;md5=37315206223081f32a5b9aaaf912f637 \
+                    file://${UNPACKDIR}/repo/tiovx/include/VX/vx.h;beginline=1;endline=15;md5=37315206223081f32a5b9aaaf912f637 \
                     file://${COREBASE}/../meta-ti/meta-ti-extras/licenses/Hewlett-Packard;md5=a07676ee09f5bfec457eb5ea75921d01 \
                     file://${COREBASE}/../meta-ti/meta-ti-extras/licenses/Patrick-Powell;md5=7e10716f13cff502f3cf6ebf8fe29c1e \
                     file://${COMMON_LICENSE_DIR}/FTL;md5=f0bf6b09ee8b02121ed10709d9e49d8b \
@@ -50,7 +50,7 @@ PLAT_SOC:j722s = "j722s"
 PLAT_SOC:j742s2 = "j742s2"
 PLAT_SOC:am62axx = "am62a"
 
-S = "${WORKDIR}/repo/sdk_builder"
+S = "${UNPACKDIR}/repo/sdk_builder"
 
 do_fetch[depends] += "repo-native:do_populate_sysroot"
 

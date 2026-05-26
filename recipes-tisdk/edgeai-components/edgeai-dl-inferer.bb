@@ -17,8 +17,6 @@ PLAT_SOC:j784s4 = "j784s4"
 PLAT_SOC:j722s = "j722s"
 PLAT_SOC:am62axx = "am62a"
 
-S = "${WORKDIR}/git"
-
 DEPENDS = "edgeai-apps-utils ti-tidl-osrt yaml-cpp opencv ti-vision-apps"
 RDEPENDS:${PN} += "ti-tidl-osrt-staticdev"
 RDEPENDS:${PN}-source = "bash python3-core cmake python3-yamlloader python3-numpy opencv opencv-dev"
@@ -27,7 +25,7 @@ COMPATIBLE_MACHINE = "j721e|j721s2|j784s4|j722s|am62axx"
 
 export SOC = "${PLAT_SOC}"
 
-EXTRA_OECMAKE = "-DTARGET_FS=${WORKDIR}/recipe-sysroot -DCMAKE_SKIP_RPATH=TRUE -DCMAKE_OUTPUT_DIR=${WORKDIR}/out"
+EXTRA_OECMAKE = "-DTARGET_FS=${WORKDIR}/recipe-sysroot -DCMAKE_SKIP_RPATH=TRUE -DCMAKE_OUTPUT_DIR=${UNPACKDIR}/out"
 
 inherit python3-dir
 
@@ -42,7 +40,7 @@ do_install:append() {
 
     mkdir -p ${D}/opt/edgeai-dl-inferer
     cp ${CP_ARGS} ${S}/* ${D}/opt/edgeai-dl-inferer
-    cp ${CP_ARGS} ${WORKDIR}/out/bin ${D}/opt/edgeai-dl-inferer
+    cp ${CP_ARGS} ${UNPACKDIR}/out/bin ${D}/opt/edgeai-dl-inferer
     rm -rf ${D}/usr/cmake
 }
 
