@@ -11,7 +11,7 @@ layers: meta
 URI: git://git.yoctoproject.org/meta-ti
 branch: master
 revision: HEAD
-layers: meta-ti-bsp, meta-ti-extras
+layers: meta-ti-bsp, meta-ti-extras, meta-ti-test
 
 URI: git://git.yoctoproject.org/meta-arm
 branch: master
@@ -30,7 +30,7 @@ revision: HEAD
 URI: git://git.yoctoproject.org/meta-arago
 branch: master
 revision: HEAD
-layers: meta-arago-distro, meta-arago-extras, meta-arago-test
+layers: meta-arago-distro, meta-arago-extras
 
 URI: https://github.com/TexasInstruments/meta-tisdk
 branch: master
