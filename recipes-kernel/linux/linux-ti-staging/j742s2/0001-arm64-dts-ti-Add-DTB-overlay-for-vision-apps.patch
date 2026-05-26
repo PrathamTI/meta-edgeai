@@ -1,4 +1,4 @@
-From 9ad0b1c231642a7bd4c5ef68cea0148263c88a04 Mon Sep 17 00:00:00 2001
+From a1cdd84df931697f4723f11b45f9c562e668911c Mon Sep 17 00:00:00 2001
 From: Rahul T R <r-ravikumar@ti.com>
 Date: Fri, 6 Sep 2024 03:53:44 +0530
 Subject: [PATCH] arm64: dts: ti: Add DTB overlay for vision apps
@@ -15,12 +15,12 @@ Signed-off-by: Rahul T R <r-ravikumar@ti.com>
  create mode 100644 arch/arm64/boot/dts/ti/k3-j742s2-vision-apps.dtso
 
 diff --git a/arch/arm64/boot/dts/ti/Makefile b/arch/arm64/boot/dts/ti/Makefile
-index 8d3bd01649bd..16bfd5a5408f 100644
+index cb2623885b0c..be7956276e42 100644
 --- a/arch/arm64/boot/dts/ti/Makefile
 +++ b/arch/arm64/boot/dts/ti/Makefile
-@@ -196,6 +196,7 @@ dtb-$(CONFIG_ARCH_K3) += k3-j784s4-evm-quad-port-eth-exp1.dtbo
+@@ -240,6 +240,7 @@ dtb-$(CONFIG_ARCH_K3) += k3-j784s4-evm-pcie0-pcie1-ep.dtbo
+ dtb-$(CONFIG_ARCH_K3) += k3-j784s4-evm-quad-port-eth-exp1.dtbo
  dtb-$(CONFIG_ARCH_K3) += k3-j784s4-evm-usxgmii-exp1-exp2.dtbo
- dtb-$(CONFIG_ARCH_K3) += k3-j784s4-j742s2-evm-pcie-ntb.dtbo
  dtb-$(CONFIG_ARCH_K3) += k3-j784s4-j742s2-evm-usb0-type-a.dtbo
 +dtb-$(CONFIG_ARCH_K3) += k3-j742s2-vision-apps.dtbo
  
@@ -346,7 +346,7 @@ index 000000000000..cc474ecc8248
 +};
 diff --git a/arch/arm64/boot/dts/ti/k3-j742s2-vision-apps.dtso b/arch/arm64/boot/dts/ti/k3-j742s2-vision-apps.dtso
 new file mode 100644
-index 000000000000..b4edfe977e8d
+index 000000000000..7e887a26dc00
 --- /dev/null
 +++ b/arch/arm64/boot/dts/ti/k3-j742s2-vision-apps.dtso
 @@ -0,0 +1,47 @@

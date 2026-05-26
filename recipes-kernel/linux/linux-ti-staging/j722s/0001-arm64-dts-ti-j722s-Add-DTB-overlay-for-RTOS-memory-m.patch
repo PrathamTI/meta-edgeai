@@ -1,4 +1,4 @@
-From a7b58b9cdbedb1e7441fe79781ebfe496e2bc66f Mon Sep 17 00:00:00 2001
+From 483bbeb8bb6238153084c29bdd73cc86e9f51e00 Mon Sep 17 00:00:00 2001
 From: Rahul T R <r-ravikumar@ti.com>
 Date: Tue, 18 Oct 2022 10:40:25 -0500
 Subject: [PATCH] arm64: dts: ti: j722s: Add DTB overlay for RTOS memory map
@@ -23,13 +23,13 @@ Signed-off-by: Shreyash Sinha <s-sinha@ti.com>
  create mode 100644 arch/arm64/boot/dts/ti/k3-j722s-vision-apps.dtso
 
 diff --git a/arch/arm64/boot/dts/ti/Makefile b/arch/arm64/boot/dts/ti/Makefile
-index bcc76971c50d..9472e906c03a 100644
+index cb2623885b0c..daf83071a54c 100644
 --- a/arch/arm64/boot/dts/ti/Makefile
 +++ b/arch/arm64/boot/dts/ti/Makefile
-@@ -217,6 +217,9 @@ dtb-$(CONFIG_ARCH_K3) += k3-j722s-evm-fpdlink-iv-fusion.dtbo
- dtb-$(CONFIG_ARCH_K3) += k3-j722s-evm-microtips-mf101hie-panel.dtbo
- dtb-$(CONFIG_ARCH_K3) += k3-j722s-evm-pwm.dtbo
+@@ -226,6 +226,8 @@ dtb-$(CONFIG_ARCH_K3) += k3-j722s-evm-fpdlink-iv-fusion.dtbo
  dtb-$(CONFIG_ARCH_K3) += k3-j722s-evm-v3link-fusion.dtbo
+ dtb-$(CONFIG_ARCH_K3) += k3-j722s-evm-dsi-rpi-7inch-panel.dtbo
+ dtb-$(CONFIG_ARCH_K3) += k3-j722s-evm-microtips-mf101hie-panel.dtbo
 +dtb-$(CONFIG_ARCH_K3) += k3-j722s-vision-apps.dtbo
 +dtb-$(CONFIG_ARCH_K3) += k3-j722s-edgeai-apps.dtbo
 +dtb-$(CONFIG_ARCH_K3) += k3-j722s-disable-ethfw-memory.dtbo

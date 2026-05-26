@@ -1,4 +1,4 @@
-From 8c52a6a5976f68c01d21839583bcb9f15591c4cb Mon Sep 17 00:00:00 2001
+From 2a2c2c51c45a60771c4df63d793197f5cb3e887c Mon Sep 17 00:00:00 2001
 From: Lucas Weaver <l-weaver@ti.com>
 Date: Tue, 18 Oct 2022 09:23:02 -0500
 Subject: [PATCH] arm64: dts: ti: k3-j784s4: Add DTB overlay for vision apps
@@ -32,12 +32,12 @@ Signed-off-by: Rahul T R <r-ravikumar@ti.com>
  create mode 100644 arch/arm64/boot/dts/ti/k3-j784s4-vision-apps.dtso
 
 diff --git a/arch/arm64/boot/dts/ti/Makefile b/arch/arm64/boot/dts/ti/Makefile
-index 697c43c6c4f6..9ed0bf4e82b0 100644
+index cb2623885b0c..bc65dd725b34 100644
 --- a/arch/arm64/boot/dts/ti/Makefile
 +++ b/arch/arm64/boot/dts/ti/Makefile
-@@ -226,6 +226,8 @@ dtb-$(CONFIG_ARCH_K3) += k3-j784s4-evm-quad-port-eth-exp1.dtbo
+@@ -240,6 +240,8 @@ dtb-$(CONFIG_ARCH_K3) += k3-j784s4-evm-pcie0-pcie1-ep.dtbo
+ dtb-$(CONFIG_ARCH_K3) += k3-j784s4-evm-quad-port-eth-exp1.dtbo
  dtb-$(CONFIG_ARCH_K3) += k3-j784s4-evm-usxgmii-exp1-exp2.dtbo
- dtb-$(CONFIG_ARCH_K3) += k3-j784s4-j742s2-evm-pcie-ntb.dtbo
  dtb-$(CONFIG_ARCH_K3) += k3-j784s4-j742s2-evm-usb0-type-a.dtbo
 +dtb-$(CONFIG_ARCH_K3) += k3-j784s4-vision-apps.dtbo
 +dtb-$(CONFIG_ARCH_K3) += k3-j784s4-edgeai-apps.dtbo
@@ -46,7 +46,7 @@ index 697c43c6c4f6..9ed0bf4e82b0 100644
  dtb-$(CONFIG_ARCH_K3) += k3-j742s2-evm.dtb
 diff --git a/arch/arm64/boot/dts/ti/k3-j784s4-edgeai-apps.dtso b/arch/arm64/boot/dts/ti/k3-j784s4-edgeai-apps.dtso
 new file mode 100644
-index 000000000000..eee02b0538b0
+index 000000000000..0d9d147a6451
 --- /dev/null
 +++ b/arch/arm64/boot/dts/ti/k3-j784s4-edgeai-apps.dtso
 @@ -0,0 +1,11 @@
@@ -63,7 +63,7 @@ index 000000000000..eee02b0538b0
 +#include "k3-j784s4-rtos-memory-map.dtsi"
 diff --git a/arch/arm64/boot/dts/ti/k3-j784s4-rtos-memory-map.dtsi b/arch/arm64/boot/dts/ti/k3-j784s4-rtos-memory-map.dtsi
 new file mode 100644
-index 000000000000..cc8970b69f16
+index 000000000000..a2dbd5cf33c7
 --- /dev/null
 +++ b/arch/arm64/boot/dts/ti/k3-j784s4-rtos-memory-map.dtsi
 @@ -0,0 +1,335 @@

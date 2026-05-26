@@ -1,4 +1,4 @@
-From 73501e02b319d643db65e02c6917910120df847a Mon Sep 17 00:00:00 2001
+From b861203d21500cca509681e31a48bb33f0fa27a6 Mon Sep 17 00:00:00 2001
 From: Rahul T R <r-ravikumar@ti.com>
 Date: Tue, 26 Mar 2024 15:48:27 +0530
 Subject: [PATCH] arm64: dts: ti: k3-j721s2: Add DTB overlay for vision apps
@@ -31,13 +31,13 @@ Signed-off-by: Rahul T R <r-ravikumar@ti.com>
  create mode 100644 arch/arm64/boot/dts/ti/k3-j721s2-vision-apps.dtso
 
 diff --git a/arch/arm64/boot/dts/ti/Makefile b/arch/arm64/boot/dts/ti/Makefile
-index 697c43c6c4f6..eab38d4635e5 100644
+index cb2623885b0c..bcec90d9f696 100644
 --- a/arch/arm64/boot/dts/ti/Makefile
 +++ b/arch/arm64/boot/dts/ti/Makefile
-@@ -199,6 +199,8 @@ k3-j721s2-evm-dtbs := k3-j721s2-common-proc-board.dtb k3-j721s2-evm-gesi-exp-boa
- dtb-$(CONFIG_ARCH_K3) += k3-j721s2-evm.dtb
- dtb-$(CONFIG_ARCH_K3) += k3-j721s2-evm-pcie1-ep.dtbo
+@@ -215,6 +215,8 @@ dtb-$(CONFIG_ARCH_K3) += k3-j721s2-evm-pcie1-ep.dtbo
  dtb-$(CONFIG_ARCH_K3) += k3-j721s2-evm-ub954.dtbo
+ dtb-$(CONFIG_ARCH_K3) += k3-j721s2-evm-usb0-type-a.dtbo
+ dtb-$(CONFIG_ARCH_K3) += k3-j721s2-evm-audio.dtbo
 +dtb-$(CONFIG_ARCH_K3) += k3-j721s2-vision-apps.dtbo
 +dtb-$(CONFIG_ARCH_K3) += k3-j721s2-edgeai-apps.dtbo
  
@@ -45,7 +45,7 @@ index 697c43c6c4f6..eab38d4635e5 100644
  dtb-$(CONFIG_ARCH_K3) += k3-am67a-beagley-ai.dtb
 diff --git a/arch/arm64/boot/dts/ti/k3-j721s2-edgeai-apps.dtso b/arch/arm64/boot/dts/ti/k3-j721s2-edgeai-apps.dtso
 new file mode 100644
-index 000000000000..e24c711875bd
+index 000000000000..b82c3da69e6e
 --- /dev/null
 +++ b/arch/arm64/boot/dts/ti/k3-j721s2-edgeai-apps.dtso
 @@ -0,0 +1,11 @@
@@ -62,7 +62,7 @@ index 000000000000..e24c711875bd
 +#include "k3-j721s2-rtos-memory-map.dtsi"
 diff --git a/arch/arm64/boot/dts/ti/k3-j721s2-rtos-memory-map.dtsi b/arch/arm64/boot/dts/ti/k3-j721s2-rtos-memory-map.dtsi
 new file mode 100644
-index 000000000000..a814ebd62a27
+index 000000000000..f41641c917bf
 --- /dev/null
 +++ b/arch/arm64/boot/dts/ti/k3-j721s2-rtos-memory-map.dtsi
 @@ -0,0 +1,238 @@
@@ -306,7 +306,7 @@ index 000000000000..a814ebd62a27
 +};
 diff --git a/arch/arm64/boot/dts/ti/k3-j721s2-vision-apps.dtso b/arch/arm64/boot/dts/ti/k3-j721s2-vision-apps.dtso
 new file mode 100644
-index 000000000000..1a751d9f029f
+index 000000000000..40bb067af022
 --- /dev/null
 +++ b/arch/arm64/boot/dts/ti/k3-j721s2-vision-apps.dtso
 @@ -0,0 +1,53 @@
