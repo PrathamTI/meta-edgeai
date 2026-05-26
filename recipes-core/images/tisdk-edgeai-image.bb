@@ -6,7 +6,7 @@ SUMMARY = "Arago based TI SDK full filesystem image intended for EdgeAI"
 DESCRIPTION = "Complete Arago TI SDK filesystem image containing entire \
  edgeAI stack intended for TI Analytics processors."
 
-COMPATIBLE_MACHINE = "j721e|j721s2|j784s4|j722s|j742s2|am62axx"
+COMPATIBLE_MACHINE = "j721e|j721s2|j784s4|j722s|am62axx"
 
 EDGEAI_STACK = " \
         edgeai-apps-utils-source \
