@@ -1,4 +1,4 @@
-From 9e273522733a5d81a156b08796d113c232e0fe38 Mon Sep 17 00:00:00 2001
+From 0918ee97e82bfd09558cb9c48b49cb447b8a3503 Mon Sep 17 00:00:00 2001
 From: Rahul T R <r-ravikumar@ti.com>
 Date: Tue, 18 Oct 2022 10:40:25 -0500
 Subject: [PATCH] arm64: dts: ti: j722s: Add DTB overlay for RTOS memory map
@@ -13,9 +13,9 @@ Signed-off-by: Shreyash Sinha <s-sinha@ti.com>
 ---
  arch/arm64/boot/dts/ti/Makefile               |   2 +
  .../boot/dts/ti/k3-j722s-edgeai-apps.dtso     |  11 ++
- .../boot/dts/ti/k3-j722s-rtos-memory-map.dtsi | 178 ++++++++++++++++++
- .../boot/dts/ti/k3-j722s-vision-apps.dtso     |  43 +++++
- 4 files changed, 234 insertions(+)
+ .../boot/dts/ti/k3-j722s-rtos-memory-map.dtsi | 166 ++++++++++++++++++
+ .../boot/dts/ti/k3-j722s-vision-apps.dtso     |  35 ++++
+ 4 files changed, 214 insertions(+)
  create mode 100644 arch/arm64/boot/dts/ti/k3-j722s-edgeai-apps.dtso
  create mode 100644 arch/arm64/boot/dts/ti/k3-j722s-rtos-memory-map.dtsi
  create mode 100644 arch/arm64/boot/dts/ti/k3-j722s-vision-apps.dtso
@@ -52,10 +52,10 @@ index 000000000000..44e7b6e7d72e
 +#include "k3-j722s-rtos-memory-map.dtsi"
 diff --git a/arch/arm64/boot/dts/ti/k3-j722s-rtos-memory-map.dtsi b/arch/arm64/boot/dts/ti/k3-j722s-rtos-memory-map.dtsi
 new file mode 100644
-index 000000000000..9689cf70dc02
+index 000000000000..8197ffe2be09
 --- /dev/null
 +++ b/arch/arm64/boot/dts/ti/k3-j722s-rtos-memory-map.dtsi
-@@ -0,0 +1,178 @@
+@@ -0,0 +1,166 @@
 +// SPDX-License-Identifier: GPL-2.0
 +/*
 + * Vision-apps: device-tree overlay
@@ -178,16 +178,6 @@ index 000000000000..9689cf70dc02
 +		reg = <0x00 0xb5000000 0x00 0x02c00000>;
 +		no-map;
 +	};
-+	vision_apps_main_r5fss0_core0_shared_memory_queue_region: vision-apps-r5f-virtual-eth-queues@b8000000 {
-+		compatible = "shared-dma-pool";
-+		reg = <0x00 0xb8000000 0x00 0x00200000>;
-+		no-map;
-+	};
-+	vision_apps_main_r5fss0_core0_shared_memory_bufpool_region: vision-apps-r5f-virtual-eth-buffers@b8200000 {
-+		compatible = "shared-dma-pool";
-+		reg = <0x00 0xb8200000 0x00 0x00e00000>;
-+		no-map;
-+	};
 +	c7x_ddr_heaps_hi: c7x-ddr-heaps-hi@880000000 {
 +		compatible = "shared-dma-pool";
 +		reg = <0x08 0x80000000 0x00 0x20000000>;
@@ -220,9 +210,7 @@ index 000000000000..9689cf70dc02
 +
 +&main_r5fss0_core0 {
 +	memory-region = <&vision_apps_main_r5fss0_core0_dma_memory_region>,
-+			<&vision_apps_main_r5fss0_core0_memory_region>,
-+			<&vision_apps_main_r5fss0_core0_shared_memory_queue_region>,
-+			<&vision_apps_main_r5fss0_core0_shared_memory_bufpool_region>;
++			<&vision_apps_main_r5fss0_core0_memory_region>;
 +};
 +
 +&c7x_0 {
@@ -236,10 +224,10 @@ index 000000000000..9689cf70dc02
 +};
 diff --git a/arch/arm64/boot/dts/ti/k3-j722s-vision-apps.dtso b/arch/arm64/boot/dts/ti/k3-j722s-vision-apps.dtso
 new file mode 100644
-index 000000000000..de81cdae3038
+index 000000000000..f4b5ad1136aa
 --- /dev/null
 +++ b/arch/arm64/boot/dts/ti/k3-j722s-vision-apps.dtso
-@@ -0,0 +1,43 @@
+@@ -0,0 +1,35 @@
 +// SPDX-License-Identifier: GPL-2.0
 +/*
 + * vision-apps: device-tree overlay
@@ -249,14 +237,6 @@ index 000000000000..de81cdae3038
 +
 +/dts-v1/;
 +/plugin/;
-+
-+&main_r5fss0_core0_shared_memory_queue_region {
-+	status = "disabled";
-+};
-+
-+&main_r5fss0_core0_shared_memory_bufpool_region {
-+	status = "disabled";
-+};
 +
 +#include "k3-j722s-rtos-memory-map.dtsi"
 +
