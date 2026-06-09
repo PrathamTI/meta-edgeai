@@ -1,4 +1,4 @@
-From 0918ee97e82bfd09558cb9c48b49cb447b8a3503 Mon Sep 17 00:00:00 2001
+From a7b58b9cdbedb1e7441fe79781ebfe496e2bc66f Mon Sep 17 00:00:00 2001
 From: Rahul T R <r-ravikumar@ti.com>
 Date: Tue, 18 Oct 2022 10:40:25 -0500
 Subject: [PATCH] arm64: dts: ti: j722s: Add DTB overlay for RTOS memory map
@@ -11,28 +11,54 @@ Upstream-Status: Inappropriate [customization for edgeai]
 Signed-off-by: Rahul T R <r-ravikumar@ti.com>
 Signed-off-by: Shreyash Sinha <s-sinha@ti.com>
 ---
- arch/arm64/boot/dts/ti/Makefile               |   2 +
+ arch/arm64/boot/dts/ti/Makefile               |   3 +
+ .../dts/ti/k3-j722s-disable-ethfw-memory.dtso |  17 ++
  .../boot/dts/ti/k3-j722s-edgeai-apps.dtso     |  11 ++
- .../boot/dts/ti/k3-j722s-rtos-memory-map.dtsi | 166 ++++++++++++++++++
+ .../boot/dts/ti/k3-j722s-rtos-memory-map.dtsi | 178 ++++++++++++++++++
  .../boot/dts/ti/k3-j722s-vision-apps.dtso     |  35 ++++
- 4 files changed, 214 insertions(+)
+ 5 files changed, 244 insertions(+)
+ create mode 100644 arch/arm64/boot/dts/ti/k3-j722s-disable-ethfw-memory.dtso
  create mode 100644 arch/arm64/boot/dts/ti/k3-j722s-edgeai-apps.dtso
  create mode 100644 arch/arm64/boot/dts/ti/k3-j722s-rtos-memory-map.dtsi
  create mode 100644 arch/arm64/boot/dts/ti/k3-j722s-vision-apps.dtso
 
 diff --git a/arch/arm64/boot/dts/ti/Makefile b/arch/arm64/boot/dts/ti/Makefile
-index 03fb8c860a6c..e6788674dcf9 100644
+index bcc76971c50d..9472e906c03a 100644
 --- a/arch/arm64/boot/dts/ti/Makefile
 +++ b/arch/arm64/boot/dts/ti/Makefile
-@@ -216,6 +216,8 @@ dtb-$(CONFIG_ARCH_K3) += k3-j722s-evm-fpdlink-iv-fusion.dtbo
+@@ -217,6 +217,9 @@ dtb-$(CONFIG_ARCH_K3) += k3-j722s-evm-fpdlink-iv-fusion.dtbo
  dtb-$(CONFIG_ARCH_K3) += k3-j722s-evm-microtips-mf101hie-panel.dtbo
  dtb-$(CONFIG_ARCH_K3) += k3-j722s-evm-pwm.dtbo
  dtb-$(CONFIG_ARCH_K3) += k3-j722s-evm-v3link-fusion.dtbo
 +dtb-$(CONFIG_ARCH_K3) += k3-j722s-vision-apps.dtbo
 +dtb-$(CONFIG_ARCH_K3) += k3-j722s-edgeai-apps.dtbo
++dtb-$(CONFIG_ARCH_K3) += k3-j722s-disable-ethfw-memory.dtbo
  
  # Boards with J784s4 SoC
  dtb-$(CONFIG_ARCH_K3) += k3-am69-sk.dtb
+diff --git a/arch/arm64/boot/dts/ti/k3-j722s-disable-ethfw-memory.dtso b/arch/arm64/boot/dts/ti/k3-j722s-disable-ethfw-memory.dtso
+new file mode 100644
+index 000000000000..fcf7174bbb7a
+--- /dev/null
++++ b/arch/arm64/boot/dts/ti/k3-j722s-disable-ethfw-memory.dtso
+@@ -0,0 +1,17 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * vision-apps: device-tree overlay
++ *
++ * Copyright (C) 2026 Texas Instruments Incorporated - http://www.ti.com/
++ */
++
++/dts-v1/;
++/plugin/;
++
++&main_r5fss0_core0_shared_memory_queue_region {
++	status = "disabled";
++};
++
++&main_r5fss0_core0_shared_memory_bufpool_region {
++	status = "disabled";
++};
 diff --git a/arch/arm64/boot/dts/ti/k3-j722s-edgeai-apps.dtso b/arch/arm64/boot/dts/ti/k3-j722s-edgeai-apps.dtso
 new file mode 100644
 index 000000000000..44e7b6e7d72e
@@ -52,10 +78,10 @@ index 000000000000..44e7b6e7d72e
 +#include "k3-j722s-rtos-memory-map.dtsi"
 diff --git a/arch/arm64/boot/dts/ti/k3-j722s-rtos-memory-map.dtsi b/arch/arm64/boot/dts/ti/k3-j722s-rtos-memory-map.dtsi
 new file mode 100644
-index 000000000000..8197ffe2be09
+index 000000000000..9689cf70dc02
 --- /dev/null
 +++ b/arch/arm64/boot/dts/ti/k3-j722s-rtos-memory-map.dtsi
-@@ -0,0 +1,166 @@
+@@ -0,0 +1,178 @@
 +// SPDX-License-Identifier: GPL-2.0
 +/*
 + * Vision-apps: device-tree overlay
@@ -178,6 +204,16 @@ index 000000000000..8197ffe2be09
 +		reg = <0x00 0xb5000000 0x00 0x02c00000>;
 +		no-map;
 +	};
++	vision_apps_main_r5fss0_core0_shared_memory_queue_region: vision-apps-r5f-virtual-eth-queues@b8000000 {
++		compatible = "shared-dma-pool";
++		reg = <0x00 0xb8000000 0x00 0x00200000>;
++		no-map;
++	};
++	vision_apps_main_r5fss0_core0_shared_memory_bufpool_region: vision-apps-r5f-virtual-eth-buffers@b8200000 {
++		compatible = "shared-dma-pool";
++		reg = <0x00 0xb8200000 0x00 0x00e00000>;
++		no-map;
++	};
 +	c7x_ddr_heaps_hi: c7x-ddr-heaps-hi@880000000 {
 +		compatible = "shared-dma-pool";
 +		reg = <0x08 0x80000000 0x00 0x20000000>;
@@ -210,7 +246,9 @@ index 000000000000..8197ffe2be09
 +
 +&main_r5fss0_core0 {
 +	memory-region = <&vision_apps_main_r5fss0_core0_dma_memory_region>,
-+			<&vision_apps_main_r5fss0_core0_memory_region>;
++			<&vision_apps_main_r5fss0_core0_memory_region>,
++			<&vision_apps_main_r5fss0_core0_shared_memory_queue_region>,
++			<&vision_apps_main_r5fss0_core0_shared_memory_bufpool_region>;
 +};
 +
 +&c7x_0 {
