@@ -9,16 +9,16 @@ PR:append = "_edgeai_2"
 PV="1.0.0"
 
 SRCREV_FORMAT="default"
-SRCREV_arm-tidl="4366d488c3368e0a94b2494cd5cce5110b3db7d9"
+SRCREV_arm-tidl="2ce9cb95073dc4235856e870a51a7b4d740cdae6"
 SRCREV_concerto="f5541b85b9973ca47680d1a6d970bf61a126daa8"
-SRCREV_onnxruntime="5816ccce5bb4b9b8ce1869bdda397257a8d2028a"
+SRCREV_onnxruntime="1a2206b67a3c1cb67b68cef5d04967c2a54da63a"
 SRCREV_tensorflow="422156a973b23bab6b86176a245a66193dccb995"
 SRCREV_protobuf="f0dc78d7e6e331b8c6bb2d5283e06aa26883ca7c"
 
 SRC_URI = " \
     git://git.ti.com/git/processor-sdk-vision/arm-tidl.git;branch=master;protocol=https;name=arm-tidl;destsuffix=git/arm-tidl \
     git://git.ti.com/git/processor-sdk/concerto.git;branch=main;protocol=https;name=concerto;destsuffix=git/concerto \
-    git://github.com/TexasInstruments/onnxruntime;branch=tidl-1.15;protocol=https;name=onnxruntime;destsuffix=git/onnxruntime  \
+    git://github.com/TexasInstruments/onnxruntime;branch=tidl-1.23;protocol=https;name=onnxruntime;destsuffix=git/onnxruntime  \
     git://github.com/TexasInstruments/tensorflow;branch=tidl-j7-2.12;protocol=https;name=tensorflow;destsuffix=git/tensorflow  \
     git://github.com/protocolbuffers/protobuf;branch=main;protocol=https;name=protobuf;destsuffix=git/protobuf \
 "
