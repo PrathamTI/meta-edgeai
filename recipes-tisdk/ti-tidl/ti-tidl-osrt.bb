@@ -7,19 +7,19 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda
 S = "${WORKDIR}/src"
 PR:append = "_edgeai_5"
 
-SRC_URI = "https://software-dl.ti.com/jacinto7/esd/tidl-tools/11_02_14_00/OSRT_TOOLS/ARM_LINUX/ARAGO/tflite_runtime-2.12.0-cp312-cp312-linux_aarch64.whl;name=tflite;subdir=${S}/tflite\
-           https://software-dl.ti.com/jacinto7/esd/tidl-tools/11_02_14_00/OSRT_TOOLS/ARM_LINUX/ARAGO/onnxruntime_tidl-1.23.0-cp312-cp312-linux_aarch64.whl;name=ort;subdir=${S}/ort\
-           https://software-dl.ti.com/jacinto7/esd/tidl-tools/11_02_14_00/OSRT_TOOLS/ARM_LINUX/ARAGO/tflite_2.12_aragoj7.tar.gz;name=tfl_lib;subdir=${S}/tfl_lib\
-           https://software-dl.ti.com/jacinto7/esd/tidl-tools/11_02_14_00/OSRT_TOOLS/ARM_LINUX/ARAGO/onnx_1.23.0_aragoj7.tar.gz;name=ort_lib;subdir=${S}/ort_lib\
-           https://software-dl.ti.com/jacinto7/esd/tidl-tools/11_02_14_00/OSRT_TOOLS/ARM_LINUX/ARAGO/tvm-0.18.0-cp312-cp312-linux_aarch64.whl;name=tvm;subdir=${S}/tvm\
-           https://software-dl.ti.com/jacinto7/esd/tidl-tools/11_02_14_00/OSRT_TOOLS/ARM_LINUX/ARAGO/tidlruntime-0.1.0-cp312-cp312-linux_aarch64.whl;name=tidlrt;subdir=${S}/tidlrt\
+SRC_URI = "https://software-dl.ti.com/jacinto7/esd/tidl-tools/11_02_16_00/OSRT_TOOLS/ARM_LINUX/ARAGO/tflite_runtime-2.12.0-cp312-cp312-linux_aarch64.whl;name=tflite;subdir=${S}/tflite\
+           https://software-dl.ti.com/jacinto7/esd/tidl-tools/11_02_16_00/OSRT_TOOLS/ARM_LINUX/ARAGO/onnxruntime_tidl-1.23.0-cp312-cp312-linux_aarch64.whl;name=ort;subdir=${S}/ort\
+           https://software-dl.ti.com/jacinto7/esd/tidl-tools/11_02_16_00/OSRT_TOOLS/ARM_LINUX/ARAGO/tflite_2.12_aragoj7.tar.gz;name=tfl_lib;subdir=${S}/tfl_lib\
+           https://software-dl.ti.com/jacinto7/esd/tidl-tools/11_02_16_00/OSRT_TOOLS/ARM_LINUX/ARAGO/onnx_1.23.0_aragoj7.tar.gz;name=ort_lib;subdir=${S}/ort_lib\
+           https://software-dl.ti.com/jacinto7/esd/tidl-tools/11_02_16_00/OSRT_TOOLS/ARM_LINUX/ARAGO/tvm-0.18.0-cp312-cp312-linux_aarch64.whl;name=tvm;subdir=${S}/tvm\
+           https://software-dl.ti.com/jacinto7/esd/tidl-tools/11_02_16_00/OSRT_TOOLS/ARM_LINUX/ARAGO/tidlruntime-0.1.0-cp312-cp312-linux_aarch64.whl;name=tidlrt;subdir=${S}/tidlrt\
            "
 
-SRC_URI[tflite.sha256sum] = "94c5f0ccbd5458cfa1327b378c7d479dc7d23979df8f26f091720f850dc02364"
-SRC_URI[ort.sha256sum] = "687fce211bf98c4105c5f5cdc5df3ce77958a10034a583e6345766a8cb5ed40e"
-SRC_URI[tfl_lib.sha256sum] = "2ff6878f51595395d84830747da6a8ddbb168eab93e84edd9e5f75cfb33b6b55"
-SRC_URI[ort_lib.sha256sum] = "2ed6de29fc89730496466e077e835919de5c89bff106fcd89982795ce666d66d"
-SRC_URI[tvm.sha256sum] = "bd687b3b993a796ed1cc5fafea6148556e1d5b6bd7f0fced071604fb712413f3"
+SRC_URI[tflite.sha256sum] = "1d0d2713956476b20eb765eeb71ad507d69c391e73a05b356dd5990e2b36ad3f"
+SRC_URI[ort.sha256sum] = "5b5b0ef852cf059bb3ee03996bc782900155f5b19eda63e1fce84fa13ac1648a"
+SRC_URI[tfl_lib.sha256sum] = "81b5c8d85725dace8baa0e9dbdceb1f79916d427797299566fb0b74ed8293a80"
+SRC_URI[ort_lib.sha256sum] = "27a1a39fb44b22a149f1fc13619f33d07cab7c6c07012789ede3f935c971e7f3"
+SRC_URI[tvm.sha256sum] = "98e2d8f2c4ebb14eccc6bd1dfb1df6f0a872141fe7fd83e6fe41175f710648bd"
 SRC_URI[tidlrt.sha256sum] = "384d825a362db72411c10eccacfbbef5d4b487c159982a17e2788bb724c5a51e"
 
 do_cp_downloaded_build_deps() {

@@ -9,10 +9,10 @@ PR:append = "_edgeai_2"
 PV="1.0.0"
 
 SRCREV_FORMAT="default"
-SRCREV_arm-tidl="2ce9cb95073dc4235856e870a51a7b4d740cdae6"
+SRCREV_arm-tidl="4f18da55af428fe33a02155641457077dbfeaa52"
 SRCREV_concerto="f5541b85b9973ca47680d1a6d970bf61a126daa8"
-SRCREV_onnxruntime="1a2206b67a3c1cb67b68cef5d04967c2a54da63a"
-SRCREV_tensorflow="422156a973b23bab6b86176a245a66193dccb995"
+SRCREV_onnxruntime="c5511e2854c94a627666c8e54f545ed46466036c"
+SRCREV_tensorflow="25b1dcb545e96d992f320e0403c39f3c9184a072"
 SRCREV_protobuf="f0dc78d7e6e331b8c6bb2d5283e06aa26883ca7c"
 
 SRC_URI = " \
