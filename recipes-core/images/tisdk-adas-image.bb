@@ -16,6 +16,7 @@ ADAS_STACK = " \
         edgeai-tidl-models \
         ti-adas-firmware \
         ti-tidl-osrt-staticdev \
+        edgeai-gst-plugins \
 "
 
 ADAS_STACK:remove:am62axx = " \
