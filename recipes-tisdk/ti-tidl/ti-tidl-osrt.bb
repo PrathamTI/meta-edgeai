@@ -67,7 +67,8 @@ do_install() {
     cp ${S}/tfl_lib/libtensorflow-lite.a ${D}${libdir}/
 
     cp   ${S}/ort_lib/libonnxruntime.so.1.23.0  ${D}${libdir}/
-    ln -s -r ${D}${libdir}/libonnxruntime.so.1.23.0 ${D}${libdir}/libonnxruntime.so
+    ln -s -r ${D}${libdir}/libonnxruntime.so.1.23.0 ${D}${libdir}/libonnxruntime.so.1
+    ln -s -r ${D}${libdir}/libonnxruntime.so.1 ${D}${libdir}/libonnxruntime.so
     rm -rf  ${S}/ort_lib/onnxruntime/csharp
     cp -r  ${S}/ort_lib/onnxruntime ${D}${includedir}/
 
