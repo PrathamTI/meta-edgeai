@@ -9,16 +9,17 @@ COMPATIBLE_MACHINE = "j721e|j721s2|j784s4|j722s|j742s2|am62axx"
 ADAS_STACK = " \
         ti-vision-apps-dev \
         ti-tidl-dev \
+        ti-adas-firmware \
+        ti-tidl-osrt-staticdev \
+"
+
+ADAS_STACK:am62axx = " \
         edgeai-tiovx-kernels-dev \
         edgeai-tiovx-kernels-source \
         edgeai-apps-utils-source \
         edgeai-test-data \
         edgeai-tidl-models \
-        ti-adas-firmware \
-        ti-tidl-osrt-staticdev \
-        edgeai-gst-plugins \
 "
-
 ADAS_STACK:remove:am62axx = " \
         ti-adas-firmware \
 "
