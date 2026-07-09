@@ -25,7 +25,6 @@ EDGEAI_STACK = " \
         edgeai-gst-apps-source \
         edgeai-gst-plugins-dev \
         edgeai-gst-plugins-source \
-        edgeai-studio-agent \
         ti-edgeai-firmware \
         ti-gpio-cpp-dev \
         ti-gpio-cpp-source \
