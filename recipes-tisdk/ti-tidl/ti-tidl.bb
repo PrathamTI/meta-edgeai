@@ -17,7 +17,7 @@ SRCREV_protobuf="f0dc78d7e6e331b8c6bb2d5283e06aa26883ca7c"
 SRC_URI = " \
     git://git.ti.com/git/processor-sdk-vision/arm-tidl.git;branch=master;protocol=https;name=arm-tidl;destsuffix=${S}/arm-tidl \
     git://git.ti.com/git/processor-sdk/concerto.git;branch=main;protocol=https;name=concerto;destsuffix=${S}/concerto \
-    git://github.com/TexasInstruments/onnxruntime;branch=tidl-1.15;protocol=https;name=onnxruntime;destsuffix=${S}/onnxruntime  \
+    git://github.com/TexasInstruments/onnxruntime;branch=tidl-1.23;protocol=https;name=onnxruntime;destsuffix=${S}/onnxruntime  \
     git://github.com/TexasInstruments/tensorflow;branch=tidl-j7-2.12;protocol=https;name=tensorflow;destsuffix=${S}/tensorflow  \
     git://github.com/protocolbuffers/protobuf;branch=main;protocol=https;name=protobuf;destsuffix=${S}/protobuf \
 "
