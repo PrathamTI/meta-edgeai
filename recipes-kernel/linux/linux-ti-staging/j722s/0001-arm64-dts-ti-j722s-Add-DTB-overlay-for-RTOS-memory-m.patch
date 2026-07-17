@@ -1,4 +1,4 @@
-From 483bbeb8bb6238153084c29bdd73cc86e9f51e00 Mon Sep 17 00:00:00 2001
+From cd2378f462a27a478afb736f383246437d7a752f Mon Sep 17 00:00:00 2001
 From: Rahul T R <r-ravikumar@ti.com>
 Date: Tue, 18 Oct 2022 10:40:25 -0500
 Subject: [PATCH] arm64: dts: ti: j722s: Add DTB overlay for RTOS memory map
@@ -23,10 +23,10 @@ Signed-off-by: Shreyash Sinha <s-sinha@ti.com>
  create mode 100644 arch/arm64/boot/dts/ti/k3-j722s-vision-apps.dtso
 
 diff --git a/arch/arm64/boot/dts/ti/Makefile b/arch/arm64/boot/dts/ti/Makefile
-index cb2623885b0c..daf83071a54c 100644
+index c1a906b9c..a36f68150 100644
 --- a/arch/arm64/boot/dts/ti/Makefile
 +++ b/arch/arm64/boot/dts/ti/Makefile
-@@ -226,6 +226,8 @@ dtb-$(CONFIG_ARCH_K3) += k3-j722s-evm-fpdlink-iv-fusion.dtbo
+@@ -227,6 +227,9 @@ dtb-$(CONFIG_ARCH_K3) += k3-j722s-evm-fpdlink-iv-fusion.dtbo
  dtb-$(CONFIG_ARCH_K3) += k3-j722s-evm-v3link-fusion.dtbo
  dtb-$(CONFIG_ARCH_K3) += k3-j722s-evm-dsi-rpi-7inch-panel.dtbo
  dtb-$(CONFIG_ARCH_K3) += k3-j722s-evm-microtips-mf101hie-panel.dtbo
@@ -38,7 +38,7 @@ index cb2623885b0c..daf83071a54c 100644
  dtb-$(CONFIG_ARCH_K3) += k3-am69-sk.dtb
 diff --git a/arch/arm64/boot/dts/ti/k3-j722s-disable-ethfw-memory.dtso b/arch/arm64/boot/dts/ti/k3-j722s-disable-ethfw-memory.dtso
 new file mode 100644
-index 000000000000..fcf7174bbb7a
+index 000000000..fcf7174bb
 --- /dev/null
 +++ b/arch/arm64/boot/dts/ti/k3-j722s-disable-ethfw-memory.dtso
 @@ -0,0 +1,17 @@
@@ -61,7 +61,7 @@ index 000000000000..fcf7174bbb7a
 +};
 diff --git a/arch/arm64/boot/dts/ti/k3-j722s-edgeai-apps.dtso b/arch/arm64/boot/dts/ti/k3-j722s-edgeai-apps.dtso
 new file mode 100644
-index 000000000000..44e7b6e7d72e
+index 000000000..44e7b6e7d
 --- /dev/null
 +++ b/arch/arm64/boot/dts/ti/k3-j722s-edgeai-apps.dtso
 @@ -0,0 +1,11 @@
@@ -78,7 +78,7 @@ index 000000000000..44e7b6e7d72e
 +#include "k3-j722s-rtos-memory-map.dtsi"
 diff --git a/arch/arm64/boot/dts/ti/k3-j722s-rtos-memory-map.dtsi b/arch/arm64/boot/dts/ti/k3-j722s-rtos-memory-map.dtsi
 new file mode 100644
-index 000000000000..9689cf70dc02
+index 000000000..9689cf70d
 --- /dev/null
 +++ b/arch/arm64/boot/dts/ti/k3-j722s-rtos-memory-map.dtsi
 @@ -0,0 +1,178 @@
@@ -262,7 +262,7 @@ index 000000000000..9689cf70dc02
 +};
 diff --git a/arch/arm64/boot/dts/ti/k3-j722s-vision-apps.dtso b/arch/arm64/boot/dts/ti/k3-j722s-vision-apps.dtso
 new file mode 100644
-index 000000000000..f4b5ad1136aa
+index 000000000..f4b5ad113
 --- /dev/null
 +++ b/arch/arm64/boot/dts/ti/k3-j722s-vision-apps.dtso
 @@ -0,0 +1,35 @@
