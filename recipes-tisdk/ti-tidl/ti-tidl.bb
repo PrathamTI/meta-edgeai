@@ -29,14 +29,17 @@ PLAT_SOC:j784s4 = "j784s4"
 PLAT_SOC:j722s = "j722s"
 PLAT_SOC:j742s2 = "j742s2"
 PLAT_SOC:am62axx = "am62a"
+PLAT_SOC:am62dxx = "am62a"
 
 CPU = "A72"
 CPU:am62axx = "A53"
+CPU:am62dxx = "A53"
 CPU:j722s = "A53"
 
 DEPENDS += "ti-vision-apps"
+DEPENDS:remove:am62dxx = "ti-vision-apps"
 
-COMPATIBLE_MACHINE = "j721e|j721s2|j784s4|j722s|j742s2|am62axx"
+COMPATIBLE_MACHINE = "j721e|j721s2|j784s4|j722s|j742s2|am62axx|am62dxx"
 
 export TARGET_FS = "${WORKDIR}/recipe-sysroot"
 
@@ -78,6 +81,7 @@ TIDL_SOC_NAME:j784s4 = "J784S4"
 TIDL_SOC_NAME:j722s = "J722S"
 TIDL_SOC_NAME:j742s2 = "J742S2"
 TIDL_SOC_NAME:am62axx = "AM62A"
+TIDL_SOC_NAME:am62dxx = "AM62A"
 
 do_install() {
     install -d ${LIB_DST_DIR}
