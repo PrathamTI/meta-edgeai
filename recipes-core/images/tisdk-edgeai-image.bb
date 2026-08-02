@@ -6,7 +6,7 @@ SUMMARY = "Arago based TI SDK full filesystem image intended for EdgeAI"
 DESCRIPTION = "Complete Arago TI SDK filesystem image containing entire \
  edgeAI stack intended for TI Analytics processors."
 
-COMPATIBLE_MACHINE = "j721e|j721s2|j784s4|j722s|am62axx"
+COMPATIBLE_MACHINE = "j721e|j721s2|j784s4|j722s|am62axx|am62dxx"
 
 EDGEAI_STACK = " \
         edgeai-apps-utils-source \
@@ -36,6 +36,12 @@ EDGEAI_STACK = " \
         ti-vision-apps-dev \
 "
 
+EDGEAI_STACK:am62dxx = " \
+         ti-tidl-osrt-dev \
+         ti-tidl-osrt-staticdev \
+         edgeai-tidl-runner \
+"
+
 EDGEAI_STACK:remove:am62axx = "ti-edgeai-firmware"
 
 IMAGE_INSTALL += " \
@@ -47,4 +53,4 @@ IMAGE_INSTALL += " \
 
 export IMAGE_BASENAME = "tisdk-edgeai-image${ARAGO_IMAGE_SUFFIX}"
 
-PR:append = "_edgeai_8"
+PR:append = "_edgeai_9"
