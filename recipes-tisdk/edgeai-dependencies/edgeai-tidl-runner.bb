@@ -7,9 +7,9 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda
 S = "${UNPACKDIR}/src"
 PR:append = "_edgeai_1"
 
-SRC_URI = "http://swubn04.india.englab.ti.com/temp-62D/tvm_rc2/artifact-gcr.tar.gz;name=artifacts"
+SRC_URI = "http://swubn04.india.englab.ti.com/temp-62D/tvm_rc3/artifacts-gcrn.tar.gz;name=artifacts"
 
-SRC_URI[artifacts.sha256sum] = "f275dbf9db9ff9e10d4d6f1a40a1cf9343d7c8be409c56d3fdc807d484e2e3ee"
+SRC_URI[artifacts.sha256sum] = "52f128c94c9620bff5fec738a8fa90f69deab6c122a00bab38745573e7f5592a"
 
 DEPENDS += "unzip-native python3-setuptools-native"
 

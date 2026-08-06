@@ -40,6 +40,9 @@ EDGEAI_STACK:am62dxx = " \
          ti-tidl-osrt-dev \
          ti-tidl-osrt-staticdev \
          edgeai-tidl-runner \
+         edgeai-gst-plugins \
+         edgeai-gst-plugins-dev \
+         edgeai-gst-plugins-source \
 "
 
 EDGEAI_STACK:remove:am62axx = "ti-edgeai-firmware"
