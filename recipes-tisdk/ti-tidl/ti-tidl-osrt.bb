@@ -54,7 +54,6 @@ INSANE_SKIP:${PN} += "already-stripped"
 do_install() {
     install -d ${D}${PYTHON_SITEPACKAGES_DIR}
 
-    # Install core TIDL runtime wheels
     unzip -d ${D}${PYTHON_SITEPACKAGES_DIR} ${S}/tflite/tflite_runtime-2.12.0-cp312-cp312-linux_aarch64.whl
     unzip -d ${D}${PYTHON_SITEPACKAGES_DIR} ${S}/ort/onnxruntime_tidl-1.23.0-cp312-cp312-linux_aarch64.whl
     unzip -d ${D}${PYTHON_SITEPACKAGES_DIR} ${S}/tidlrt/tidlruntime-0.1.0-cp312-cp312-linux_aarch64.whl

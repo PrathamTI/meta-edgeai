@@ -5,7 +5,7 @@ LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
 
 S = "${UNPACKDIR}/src"
-PR:append = "_edgeai_1"
+PR = "r0"
 
 SRC_URI = "http://swubn04.india.englab.ti.com/temp-62D/tvm_rc3/artifacts-gcrn.tar.gz;name=artifacts"
 
@@ -13,7 +13,7 @@ SRC_URI[artifacts.sha256sum] = "52f128c94c9620bff5fec738a8fa90f69deab6c122a00bab
 
 DEPENDS += "unzip-native python3-setuptools-native"
 
-COMPATIBLE_MACHINE = "j721e|j721s2|j784s4|j722s|j742s2|am62axx|am62dxx"
+COMPATIBLE_MACHINE = "am62dxx"
 
 inherit python3-dir
 

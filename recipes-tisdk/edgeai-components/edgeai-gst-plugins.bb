@@ -24,7 +24,7 @@ PLAT_SOC:am62dxx = "am62d"
 
 DEPENDS = "edgeai-tiovx-modules edgeai-apps-utils gstreamer1.0-plugins-base edgeai-dl-inferer ti-tidl-osrt"
 DEPENDS:remove:adas = " edgeai-dl-inferer ti-tidl-osrt"
-DEPENDS:am62dxx = "gstreamer1.0-plugins-base ti-tidl-osrt"
+DEPENDS:am62dxx = "gstreamer1.0-plugins-base ti-tidl-osrt ti-librpmsg-dma-example"
 
 RDEPENDS:${PN}-source = "bash meson ninja"
 
@@ -38,7 +38,7 @@ FILES:${PN} += "${libdir}/gstreamer-1.0/*.so"
 
 EXTRA_OEMESON = "--prefix=/usr -Dpkg_config_path=${S}/pkgconfig"
 EXTRA_OEMESON:append:adas = " -Ddl-plugins=disabled"
-EXTRA_OEMESON:am62dxx = "--prefix=/usr -Dpkg_config_path=${S}/pkgconfig -Ddl-plugins=disabled -Denable-tidl=disabled -Dtvm-plugins=enabled -Denable-tvm=true"
+EXTRA_OEMESON:am62dxx = "--prefix=/usr -Dpkg_config_path=${S}/pkgconfig -Ddl-plugins=disabled -Denable-tidl=disabled -Dtvm-plugins=enabled -Denable-tvm=true  -Dstft-plugins=enabled"
 
 inherit meson pkgconfig
 
